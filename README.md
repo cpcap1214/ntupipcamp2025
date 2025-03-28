@@ -19,32 +19,10 @@
 - HTML5
 - CSS3
 - JavaScript
-- Font Awesome 圖標
-- Google Fonts
 
-## 本地開發
+## 開發人員
 
-1. 克隆專案：
-```bash
-git clone https://github.com/cpcap1214/ntupipcamp2025.git
-```
-
-2. 進入專案目錄：
-```bash
-cd ntupipcamp2025
-```
-
-3. 使用瀏覽器開啟 `index.html` 檔案即可預覽網站。
-
-## 團隊成員
-
-- 心理系召部：黃祉誠、郭心宥、張有璿
-- 物治系召部：陳玟伶、江柏霖、蘇彥斌
-- 資管系召部：王姿涵、陳鼎元、鍾心哲
-
-## 部署資訊
-
-本網站使用 GitHub Pages 部署，網址為：https://cpcap1214.github.io/ntupipcamp2025/
+- cpcap
 
 ## 授權條款
 
