@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A - NTU PIP Camp 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">NTU PIP Camp 2025</a>
+            <div class="nav-links">
+                <a href="index.html">首頁</a>
+                <a href="news.html">最新消息</a>
+                <a href="team.html">團隊介紹</a>
+                <a href="download.html">文件下載</a>
+                <a href="faq.html" class="active">Q&A</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">常見問題</h1>
+            <p class="page-description">解答您對 NTU PIP Camp 2025 的疑問</p>
+        </div>
+
+        <div class="faq-section">
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>營隊的舉辦時間是什麼時候？</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>NTU PIP Camp 2025 將於 2025 年 7 月舉行，確切日期將在近期公告。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>如何報名參加營隊？</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>報名方式將在簡章中詳細說明，包括線上報名系統的使用方式、所需文件等資訊。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>營隊的費用是多少？</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>營隊費用將包含課程材料、餐點、保險等，詳細費用將在簡章中說明。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>需要具備什麼樣的背景才能參加？</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>我們歡迎對產品創新有興趣的學生參加，不限科系。基本的程式設計經驗會有所幫助，但不是必要條件。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>營隊會提供住宿嗎？</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>營隊期間將提供台大校內住宿，詳細住宿資訊將在簡章中說明。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="contact-info">
+                <p>聯絡我們</p>
+                <div class="contact-links">
+                    <a href="#" class="contact-link"><i class="fas fa-envelope"></i> Email</a>
+                    <a href="#" class="contact-link"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="#" class="contact-link"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2024 NTU PIP Camp. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 展開/收合功能
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                answer.style.maxHeight = answer.style.maxHeight ? null : answer.scrollHeight;
+                icon.style.transform = icon.style.transform === 'rotate(180deg)' ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+        });
+    </script>
+</body>
+</html> 
