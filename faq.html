@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常見問題 FAQ - 愛你的心物法資拔｜2025迎新宿營</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'camp-pink': '#FFB6C1',
+                        'camp-orange': '#FFD4C4',
+                        'camp-yellow': '#FFF2CC',
+                        'camp-brown': '#8B4513'
+                    },
+                    fontFamily: {
+                        'chinese': ['Noto Sans TC', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-content.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="font-chinese bg-white min-h-screen">
+    <!-- 導覽列 -->
+    <nav class="bg-white/90 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-camp-brown">愛你的心物法資拔</h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-camp-brown hover:text-camp-pink transition-colors">首頁</a>
+                    <a href="news.html" class="text-camp-brown hover:text-camp-pink transition-colors">最新消息</a>
+                    <a href="schedule.html" class="text-camp-brown hover:text-camp-pink transition-colors">活動時程</a>
+                    <a href="team.html" class="text-camp-brown hover:text-camp-pink transition-colors">團隊介紹</a>
+                    <a href="downloads.html" class="text-camp-brown hover:text-camp-pink transition-colors">下載區</a>
+                    <a href="faq.html" class="text-camp-brown font-medium hover:text-camp-pink transition-colors">FAQ</a>
+                </div>
+                <!-- 手機選單按鈕 -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-camp-brown hover:text-camp-pink">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 手機選單 -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-sm">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-camp-brown">首頁</a>
+                <a href="news.html" class="block px-3 py-2 text-camp-brown">最新消息</a>
+                <a href="schedule.html" class="block px-3 py-2 text-camp-brown">活動時程</a>
+                <a href="team.html" class="block px-3 py-2 text-camp-brown">團隊介紹</a>
+                <a href="downloads.html" class="block px-3 py-2 text-camp-brown">下載區</a>
+                <a href="faq.html" class="block px-3 py-2 text-camp-brown font-medium">FAQ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 頁面標題 -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-camp-brown mb-4">❓ 常見問題</h1>
+            <p class="text-lg text-camp-brown/70">解答您關於活動的各種疑問</p>
+        </div>
+    </section>
+
+    <!-- FAQ 內容 -->
+    <section class="pb-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- 分類導航 -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="category-btn active bg-camp-pink text-white px-6 py-3 rounded-full font-medium transition-colors" data-category="all">
+                    全部問題
+                </button>
+                <button class="category-btn bg-white/80 text-camp-brown px-6 py-3 rounded-full font-medium hover:bg-camp-pink hover:text-white transition-colors" data-category="registration">
+                    報名相關
+                </button>
+                <button class="category-btn bg-white/80 text-camp-brown px-6 py-3 rounded-full font-medium hover:bg-camp-pink hover:text-white transition-colors" data-category="activity">
+                    活動內容
+                </button>
+                <button class="category-btn bg-white/80 text-camp-brown px-6 py-3 rounded-full font-medium hover:bg-camp-pink hover:text-white transition-colors" data-category="accommodation">
+                    住宿交通
+                </button>
+                <button class="category-btn bg-white/80 text-camp-brown px-6 py-3 rounded-full font-medium hover:bg-camp-pink hover:text-white transition-colors" data-category="other">
+                    其他問題
+                </button>
+            </div>
+
+            <!-- FAQ 項目 -->
+            <div class="space-y-4">
+                <!-- 報名相關 -->
+                <div class="faq-item bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg" data-category="registration">
+                    <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center">
+                        <h3 class="text-lg font-bold text-camp-brown">誰可以參加這次的迎新宿營？</h3>
+                        <span class="text-camp-pink text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content px-8 pb-6">
+                        <p class="text-camp-brown/80 leading-relaxed">
+                            本次迎新宿營開放給台灣大學資訊管理學系、心理學系、物理治療學系的112學年度入學新生參加。如果您是這三個系所的新生，都歡迎報名參加！
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg" data-category="registration">
+                    <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center">
+                        <h3 class="text-lg font-bold text-camp-brown">報名費用是多少？包含哪些項目？</h3>
+                        <span class="text-camp-pink text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content px-8 pb-6">
+                        <div class="text-camp-brown/80 leading-relaxed">
+                            <p class="mb-3">報名費用為 <strong class="text-camp-brown">NT$ 2,800</strong>，包含以下項目：</p>
+                            <ul class="space-y-2 ml-4">
+                                <li>• 三天兩夜住宿費用</li>
+                                <li>• 六餐餐費（第一天午晚餐、第二天三餐、第三天早餐）</li>
+                                <li>• 活動材料費與場地費</li>
+                                <li>• 營隊紀念品</li>
+                                <li>• 交通接駁費用</li>
+                                <li>• 保險費用</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg" data-category="registration">
+                    <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center">
+                        <h3 class="text-lg font-bold text-camp-brown">如何完成報名程序？</h3>
+                        <span class="text-camp-pink text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content px-8 pb-6">
+                        <div class="text-camp-brown/80 leading-relaxed">
+                            <p class="mb-3">請依照以下步驟完成報名：</p>
+                            <ol class="space-y-2 ml-4">
+                                <li><strong>1.</strong> 填寫線上報名表</li>
+                                <li><strong>2.</strong> 繳交報名費（銀行轉帳或現金繳費）</li>
+                                <li><strong>3.</strong> 上傳家長同意書（未滿20歲需要）</li>
+                                <li><strong>4.</strong> 上傳身分證影本</li>
+                                <li><strong>5.</strong> 等待報名確認通知</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg" data-category="registration">
+                    <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center">
+                        <h3 class="text-lg font-bold text-camp-brown">報名截止日期是什麼時候？</h3>
+                        <span class="text-camp-pink text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content px-8 pb-6">
+                        <p class="text-camp-brown/80 leading-relaxed">
+                            報名截止日期為 <strong class="text-camp-brown">2025年7月15日</strong>。名額有限，建議儘早報名以免向隅！如果報名人數超過預期，將採先報名先錄取的方式。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 活動內容 -->
+                <div class="faq-item bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg" data-category="activity">
+                    <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center">
+                        <h3 class="text-lg font-bold text-camp-brown">活動內容適合所有人參加嗎？</h3>
+                        <span class="text-camp-pink text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content px-8 pb-6">
+                        <p class="text-camp-brown/80 leading-relaxed">
+                            我們的活動設計考量到不同個性和體能狀況的同學。大部分活動都是團體合作性質，不會有過於激烈的運動。如果您有特殊身體狀況或需求，請在報名時告知我們，我們會協助安排適合的替代活動。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg" data-category="activity">
+                    <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center">
+                        <h3 class="text-lg font-bold text-camp-brown">如果天氣不好，活動會如何調整？</h3>
+                        <span class="text-camp-pink text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content px-8 pb-6">
+                        <p class="text-camp-brown/80 leading-relaxed">
+                            我們已準備完整的備案計畫。如遇下雨，戶外活動將改為室內進行；如遇颱風等惡劣天候，營隊可能延期或改為一日活動。所有變更都會提前通知參加者，並依情況退還部分費用。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg" data-category="activity">
+                    <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center">
+                        <h3 class="text-lg font-bold text-camp-brown">需要準備什麼個人物品？</h3>
+                        <span class="text-camp-pink text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content px-8 pb-6">
+                        <div class="text-camp-brown/80 leading-relaxed">
+                            <p class="mb-3">必備物品：</p>
+                            <ul class="space-y-1 ml-4 mb-4">
+                                <li>• 身分證件、健保卡</li>
+                                <li>• 個人藥品（如有需要）</li>
+                                <li>• 換洗衣物（建議多帶一套）</li>
+                                <li>• 盥洗用具</li>
+                                <li>• 毛巾、拖鞋</li>
+                            </ul>
+                            <p class="mb-3">建議攜帶：</p>
+                            <ul class="space-y-1 ml-4">
+                                <li>• 防曬用品、帽子</li>
+                                <li>• 雨具</li>
+                                <li>• 相機或手機</li>
+                                <li>• 小零食</li>
+                                <li>• 個人水壺</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 住宿交通 -->
+                <div class="faq-item bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg" data-category="accommodation">
+                    <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center">
+                        <h3 class="text-lg font-bold text-camp-brown">住宿環境如何？</h3>
+                        <span class="text-camp-pink text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content px-8 pb-6">
+                        <p class="text-camp-brown/80 leading-relaxed">
+                            我們入住的是合歡自然生活體驗基地的多人宿舍，每間房間約4-6人，備有基本寢具。浴室為共用，男女分開。基地環境優美且安全，並有專人管理。建議自備毛巾和個人盥洗用品。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg" data-category="accommodation">
+                    <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center">
+                        <h3 class="text-lg font-bold text-camp-brown">交通安排如何？可以自行前往嗎？</h3>
+                        <span class="text-camp-pink text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content px-8 pb-6">
+                        <div class="text-camp-brown/80 leading-relaxed">
+                            <p class="mb-3">我們提供兩種交通方式：</p>
+                            <p class="mb-2"><strong>統一接駁：</strong>8月24日早上8:00在台大校門口集合，搭乘遊覽車前往</p>
+                            <p class="mb-3"><strong>自行前往：</strong>請於當日上午10:00前抵達基地，詳細路線圖可在下載區取得</p>
+                            <p>建議選擇統一接駁，既安全又能與同學提早認識！</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg" data-category="accommodation">
+                    <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center">
+                        <h3 class="text-lg font-bold text-camp-brown">基地有網路嗎？可以充電嗎？</h3>
+                        <span class="text-camp-pink text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content px-8 pb-6">
+                        <p class="text-camp-brown/80 leading-relaxed">
+                            基地提供免費WiFi，訊號穩定。每間宿舍都有充電插座，但數量有限，建議攜帶延長線或行動電源。不過，我們鼓勵大家多與夥伴面對面互動，適度使用3C產品！
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 其他問題 -->
+                <div class="faq-item bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg" data-category="other">
+                    <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center">
+                        <h3 class="text-lg font-bold text-camp-brown">有飲食限制怎麼辦？</h3>
+                        <span class="text-camp-pink text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content px-8 pb-6">
+                        <p class="text-camp-brown/80 leading-relaxed">
+                            請在報名時詳細填寫飲食需求（如素食、過敏原等），我們會與基地廚房協調準備合適的餐點。一般素食需求都能配合，特殊過敏原請提早告知以便安排。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg" data-category="other">
+                    <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center">
+                        <h3 class="text-lg font-bold text-camp-brown">如果臨時無法參加，可以退費嗎？</h3>
+                        <span class="text-camp-pink text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content px-8 pb-6">
+                        <div class="text-camp-brown/80 leading-relaxed">
+                            <p class="mb-3">退費標準如下：</p>
+                            <ul class="space-y-1 ml-4">
+                                <li>• 活動前14天取消：退還90%費用</li>
+                                <li>• 活動前7天取消：退還70%費用</li>
+                                <li>• 活動前3天取消：退還50%費用</li>
+                                <li>• 活動前1天或當日取消：不予退費</li>
+                            </ul>
+                            <p class="mt-3">如因不可抗力因素（如疫情、天災）需取消，將全額退費。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg" data-category="other">
+                    <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center">
+                        <h3 class="text-lg font-bold text-camp-brown">還有其他問題要問怎麼辦？</h3>
+                        <span class="text-camp-pink text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content px-8 pb-6">
+                        <div class="text-camp-brown/80 leading-relaxed">
+                            <p class="mb-3">歡迎透過以下方式聯繫我們：</p>
+                            <ul class="space-y-1 ml-4">
+                                <li>• Email: camp2025@ntu.edu.tw</li>
+                                <li>• 臉書粉絲專頁私訊</li>
+                                <li>• 活動諮詢專線：(02) 3366-1234</li>
+                                <li>• 辦公時間：週一至週五 9:00-17:00</li>
+                            </ul>
+                            <p class="mt-3">我們會盡快回覆您的疑問！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 聯絡資訊卡片 -->
+            <div class="mt-12 bg-gradient-to-r from-camp-pink to-camp-orange rounded-3xl p-8 text-white text-center">
+                <h2 class="text-2xl font-bold mb-4">💬 還有問題嗎？</h2>
+                <p class="mb-6 opacity-90">如果以上FAQ沒有解答您的疑問，歡迎直接聯繫我們！</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="mailto:camp2025@ntu.edu.tw" class="bg-white text-camp-pink px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors">
+                        📧 發送郵件
+                    </a>
+                    <button class="bg-white/20 text-white px-6 py-3 rounded-full font-bold hover:bg-white/30 transition-colors">
+                        📞 電話諮詢
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="bg-camp-brown text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">聯絡資訊</h3>
+                    <p class="mb-2">國立台灣大學</p>
+                    <p class="mb-2">資訊管理學系、心理學系、物理治療學系</p>
+                    <p>Email: camp2025@ntu.edu.tw</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">活動資訊</h3>
+                    <p class="mb-2">時間：2025.08.24 - 08.26</p>
+                    <p class="mb-2">地點：合歡自然生活體驗基地</p>
+                    <p>對象：台大資管、心理、物治三系新生</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">快速連結</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-camp-pink transition-colors">首頁</a></li>
+                        <li><a href="news.html" class="hover:text-camp-pink transition-colors">最新消息</a></li>
+                        <li><a href="schedule.html" class="hover:text-camp-pink transition-colors">活動時程</a></li>
+                        <li><a href="downloads.html" class="hover:text-camp-pink transition-colors">下載區</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/20 mt-8 pt-8 text-center">
+                <p>&copy; 2025 愛你的心物法資拔迎新宿營. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // FAQ 展開收合功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('span');
+                    
+                    if (content.classList.contains('active')) {
+                        content.classList.remove('active');
+                        icon.style.transform = 'rotate(0deg)';
+                        icon.textContent = '+';
+                    } else {
+                        // 關閉其他已展開的項目
+                        document.querySelectorAll('.faq-content.active').forEach(activeContent => {
+                            activeContent.classList.remove('active');
+                            const activeIcon = activeContent.previousElementSibling.querySelector('span');
+                            activeIcon.style.transform = 'rotate(0deg)';
+                            activeIcon.textContent = '+';
+                        });
+                        
+                        content.classList.add('active');
+                        icon.style.transform = 'rotate(45deg)';
+                        icon.textContent = '×';
+                    }
+                });
+            });
+
+            // 分類篩選功能
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.dataset.category;
+                    
+                    // 更新按鈕狀態
+                    categoryBtns.forEach(b => {
+                        b.classList.remove('active', 'bg-camp-pink', 'text-white');
+                        b.classList.add('bg-white/80', 'text-camp-brown');
+                    });
+                    this.classList.add('active', 'bg-camp-pink', 'text-white');
+                    this.classList.remove('bg-white/80', 'text-camp-brown');
+
+                    // 篩選項目
+                    faqItems.forEach(item => {
+                        if (category === 'all' || item.dataset.category === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

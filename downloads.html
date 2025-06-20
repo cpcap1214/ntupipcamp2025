@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下載區 - 愛你的心物法資拔｜2025迎新宿營</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'camp-pink': '#FFB6C1',
+                        'camp-orange': '#FFD4C4',
+                        'camp-yellow': '#FFF2CC',
+                        'camp-brown': '#8B4513'
+                    },
+                    fontFamily: {
+                        'chinese': ['Noto Sans TC', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .download-card {
+            transition: all 0.3s ease;
+        }
+        .download-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="font-chinese bg-white min-h-screen">
+    <!-- 導覽列 -->
+    <nav class="bg-white/90 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-camp-brown">愛你的心物法資拔</h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-camp-brown hover:text-camp-pink transition-colors">首頁</a>
+                    <a href="news.html" class="text-camp-brown hover:text-camp-pink transition-colors">最新消息</a>
+                    <a href="schedule.html" class="text-camp-brown hover:text-camp-pink transition-colors">活動時程</a>
+                    <a href="team.html" class="text-camp-brown hover:text-camp-pink transition-colors">團隊介紹</a>
+                    <a href="downloads.html" class="text-camp-brown font-medium hover:text-camp-pink transition-colors">下載區</a>
+                    <a href="faq.html" class="text-camp-brown hover:text-camp-pink transition-colors">FAQ</a>
+                </div>
+                <!-- 手機選單按鈕 -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-camp-brown hover:text-camp-pink">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 手機選單 -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-sm">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-camp-brown">首頁</a>
+                <a href="news.html" class="block px-3 py-2 text-camp-brown">最新消息</a>
+                <a href="schedule.html" class="block px-3 py-2 text-camp-brown">活動時程</a>
+                <a href="team.html" class="block px-3 py-2 text-camp-brown">團隊介紹</a>
+                <a href="downloads.html" class="block px-3 py-2 text-camp-brown font-medium">下載區</a>
+                <a href="faq.html" class="block px-3 py-2 text-camp-brown">FAQ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 頁面標題 -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-camp-brown mb-4">📁 下載區</h1>
+            <p class="text-lg text-camp-brown/70 mb-8">活動簡章、同意書等重要文件</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="bg-white/80 backdrop-blur-sm rounded-full px-6 py-2 shadow-lg">
+                    <span class="text-camp-brown font-medium">📋 報名文件</span>
+                </div>
+                <div class="bg-white/80 backdrop-blur-sm rounded-full px-6 py-2 shadow-lg">
+                    <span class="text-camp-brown font-medium">📖 活動資料</span>
+                </div>
+                <div class="bg-white/80 backdrop-blur-sm rounded-full px-6 py-2 shadow-lg">
+                    <span class="text-camp-brown font-medium">🗺️ 交通資訊</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下載內容 -->
+    <section class="pb-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- 重要文件 -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-camp-brown mb-8 text-center">📋 重要文件</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- 活動簡章 -->
+                    <div class="download-card bg-gradient-to-br from-camp-pink to-camp-orange rounded-3xl p-6 text-white shadow-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-4xl">📄</div>
+                            <div class="bg-white/20 rounded-full px-3 py-1 text-sm">必讀</div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">活動簡章</h3>
+                        <p class="text-white/90 text-sm mb-4">
+                            完整的活動資訊、報名方式、注意事項等詳細說明
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-white/80">PDF • 2.1 MB</span>
+                            <button class="bg-white text-camp-pink px-4 py-2 rounded-full font-bold hover:bg-gray-100 transition-colors" onclick="downloadFile('活動簡章.pdf')">
+                                下載
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 家長同意書 -->
+                    <div class="download-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-4xl">✍️</div>
+                            <div class="bg-red-100 text-red-800 rounded-full px-3 py-1 text-sm">必填</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-camp-brown mb-2">家長同意書</h3>
+                        <p class="text-camp-brown/80 text-sm mb-4">
+                            未滿20歲學員需家長簽署同意書（請列印填寫後掃描上傳）
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-camp-brown/60">PDF • 0.8 MB</span>
+                            <button class="bg-camp-pink text-white px-4 py-2 rounded-full font-bold hover:bg-camp-pink/80 transition-colors" onclick="downloadFile('家長同意書.pdf')">
+                                下載
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 報名表 -->
+                    <div class="download-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-4xl">📝</div>
+                            <div class="bg-blue-100 text-blue-800 rounded-full px-3 py-1 text-sm">線上填寫</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-camp-brown mb-2">報名表格</h3>
+                        <p class="text-camp-brown/80 text-sm mb-4">
+                            線上報名表格，填寫個人資料、緊急聯絡人、飲食需求等
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-camp-brown/60">Google Form</span>
+                            <a href="#" class="bg-camp-pink text-white px-4 py-2 rounded-full font-bold hover:bg-camp-pink/80 transition-colors">
+                                前往填寫
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 健康聲明書 -->
+                    <div class="download-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-4xl">🏥</div>
+                            <div class="bg-green-100 text-green-800 rounded-full px-3 py-1 text-sm">重要</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-camp-brown mb-2">健康聲明書</h3>
+                        <p class="text-camp-brown/80 text-sm mb-4">
+                            請誠實填寫健康狀況，有助於我們提供更好的照護
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-camp-brown/60">PDF • 0.5 MB</span>
+                            <button class="bg-camp-pink text-white px-4 py-2 rounded-full font-bold hover:bg-camp-pink/80 transition-colors" onclick="downloadFile('健康聲明書.pdf')">
+                                下載
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 保險資料表 -->
+                    <div class="download-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-4xl">🛡️</div>
+                            <div class="bg-yellow-100 text-yellow-800 rounded-full px-3 py-1 text-sm">必填</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-camp-brown mb-2">保險資料表</h3>
+                        <p class="text-camp-brown/80 text-sm mb-4">
+                            活動保險所需的個人基本資料與緊急聯絡人資訊
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-camp-brown/60">PDF • 0.6 MB</span>
+                            <button class="bg-camp-pink text-white px-4 py-2 rounded-full font-bold hover:bg-camp-pink/80 transition-colors" onclick="downloadFile('保險資料表.pdf')">
+                                下載
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 繳費資訊 -->
+                    <div class="download-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-4xl">💰</div>
+                            <div class="bg-purple-100 text-purple-800 rounded-full px-3 py-1 text-sm">繳費</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-camp-brown mb-2">繳費資訊</h3>
+                        <p class="text-camp-brown/80 text-sm mb-4">
+                            詳細的繳費方式、銀行帳號、匯款注意事項
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-camp-brown/60">PDF • 0.4 MB</span>
+                            <button class="bg-camp-pink text-white px-4 py-2 rounded-full font-bold hover:bg-camp-pink/80 transition-colors" onclick="downloadFile('繳費資訊.pdf')">
+                                下載
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 行前資訊 -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-camp-brown mb-8 text-center">🎒 行前資訊</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- 行前通知 -->
+                    <div class="download-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-4xl">📢</div>
+                            <div class="bg-orange-100 text-orange-800 rounded-full px-3 py-1 text-sm">最新</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-camp-brown mb-2">行前通知</h3>
+                        <p class="text-camp-brown/80 text-sm mb-4">
+                            出發前一週的重要提醒、天氣預報、集合資訊
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-camp-brown/60">PDF • 1.2 MB</span>
+                            <button class="bg-camp-pink text-white px-4 py-2 rounded-full font-bold hover:bg-camp-pink/80 transition-colors" onclick="downloadFile('行前通知.pdf')">
+                                下載
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 準備清單 -->
+                    <div class="download-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-4xl">📋</div>
+                            <div class="bg-green-100 text-green-800 rounded-full px-3 py-1 text-sm">實用</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-camp-brown mb-2">行李準備清單</h3>
+                        <p class="text-camp-brown/80 text-sm mb-4">
+                            詳細的必帶物品與建議攜帶物品清單，讓你不遺漏任何重要物品
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-camp-brown/60">PDF • 0.7 MB</span>
+                            <button class="bg-camp-pink text-white px-4 py-2 rounded-full font-bold hover:bg-camp-pink/80 transition-colors" onclick="downloadFile('行李準備清單.pdf')">
+                                下載
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 服裝建議 -->
+                    <div class="download-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-4xl">👕</div>
+                            <div class="bg-pink-100 text-pink-800 rounded-full px-3 py-1 text-sm">參考</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-camp-brown mb-2">服裝建議</h3>
+                        <p class="text-camp-brown/80 text-sm mb-4">
+                            適合山區活動的服裝建議，包含不同天氣的穿搭指南
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-camp-brown/60">PDF • 1.0 MB</span>
+                            <button class="bg-camp-pink text-white px-4 py-2 rounded-full font-bold hover:bg-camp-pink/80 transition-colors" onclick="downloadFile('服裝建議.pdf')">
+                                下載
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 交通與地圖 -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-camp-brown mb-8 text-center">🚗 交通與地圖</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- 交通資訊 -->
+                    <div class="download-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-4xl">📍</div>
+                            <div class="bg-blue-100 text-blue-800 rounded-full px-3 py-1 text-sm">重要</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-camp-brown mb-2">交通資訊</h3>
+                        <p class="text-camp-brown/80 text-sm mb-4">
+                            集合地点、發車時間、自行前往路線說明
+                        </p>
+                        <div class="space-y-3 mb-4">
+                            <div class="bg-green-50 border-l-4 border-green-400 p-3 rounded">
+                                <p class="text-green-800 font-semibold text-sm">統一接駁</p>
+                                <p class="text-green-700 text-sm">8/24 上午8:00 台大校門口集合</p>
+                            </div>
+                            <div class="bg-blue-50 border-l-4 border-blue-400 p-3 rounded">
+                                <p class="text-blue-800 font-semibold text-sm">自行前往</p>
+                                <p class="text-blue-700 text-sm">請於上午10:00前抵達基地</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-camp-brown/60">PDF • 1.5 MB</span>
+                            <button class="bg-camp-pink text-white px-4 py-2 rounded-full font-bold hover:bg-camp-pink/80 transition-colors" onclick="downloadFile('交通資訊.pdf')">
+                                下載
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 基地地圖 -->
+                    <div class="download-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-4xl">🗺️</div>
+                            <div class="bg-yellow-100 text-yellow-800 rounded-full px-3 py-1 text-sm">地圖</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-camp-brown mb-2">基地地圖</h3>
+                        <p class="text-camp-brown/80 text-sm mb-4">
+                            合歡自然生活體驗基地的詳細地圖與設施介紹
+                        </p>
+                        <div class="bg-camp-yellow/50 rounded-lg p-3 mb-4">
+                            <p class="text-sm text-camp-brown/80">
+                                <strong>地址：</strong>南投縣仁愛鄉合歡山生活體驗基地<br>
+                                <strong>GPS：</strong>24.1234, 121.5678
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-camp-brown/60">PDF • 2.8 MB</span>
+                            <button class="bg-camp-pink text-white px-4 py-2 rounded-full font-bold hover:bg-camp-pink/80 transition-colors" onclick="downloadFile('基地地圖.pdf')">
+                                下載
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 一鍵下載 -->
+            <div class="text-center">
+                <div class="bg-gradient-to-r from-camp-pink to-camp-orange rounded-3xl p-8 text-white">
+                    <h2 class="text-2xl font-bold mb-4">📦 一鍵下載全部文件</h2>
+                    <p class="mb-6 opacity-90">懶得一個一個下載？點擊下方按鈕一次下載所有必要文件！</p>
+                    <button class="bg-white text-camp-pink px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors" onclick="downloadAll()">
+                        🚀 下載完整包 (ZIP • 8.9 MB)
+                    </button>
+                    <p class="mt-4 text-sm opacity-80">包含所有PDF文件，建議在電腦上解壓縮</p>
+                </div>
+            </div>
+
+            <!-- 下載說明 -->
+            <div class="mt-12 bg-white/50 rounded-3xl p-8">
+                <h3 class="text-xl font-bold text-camp-brown mb-4 flex items-center">
+                    <span class="text-2xl mr-3">💡</span>
+                    下載說明
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold text-camp-brown mb-2">📱 手機用戶</h4>
+                        <ul class="text-sm text-camp-brown/70 space-y-1">
+                            <li>• 點擊下載後會自動開啟或儲存至下載資料夾</li>
+                            <li>• 建議使用PDF閱讀器開啟文件</li>
+                            <li>• 列印文件請使用印表機或至便利商店</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-camp-brown mb-2">💻 電腦用戶</h4>
+                        <ul class="text-sm text-camp-brown/70 space-y-1">
+                            <li>• 文件會下載至預設下載資料夾</li>
+                            <li>• 可直接開啟編輯或列印</li>
+                            <li>• 建議下載完整包統一管理</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-6 bg-camp-yellow/50 rounded-lg p-4">
+                    <p class="text-sm text-camp-brown/80">
+                        <strong>注意：</strong>如果下載時遇到問題，請嘗試使用不同瀏覽器或聯繫我們協助處理。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="bg-camp-brown text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">聯絡資訊</h3>
+                    <p class="mb-2">國立台灣大學</p>
+                    <p class="mb-2">資訊管理學系、心理學系、物理治療學系</p>
+                    <p>Email: camp2025@ntu.edu.tw</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">活動資訊</h3>
+                    <p class="mb-2">時間：2025.08.24 - 08.26</p>
+                    <p class="mb-2">地點：合歡自然生活體驗基地</p>
+                    <p>對象：台大資管、心理、物治三系新生</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">快速連結</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-camp-pink transition-colors">首頁</a></li>
+                        <li><a href="news.html" class="hover:text-camp-pink transition-colors">最新消息</a></li>
+                        <li><a href="schedule.html" class="hover:text-camp-pink transition-colors">活動時程</a></li>
+                        <li><a href="team.html" class="hover:text-camp-pink transition-colors">團隊介紹</a></li>
+                        <li><a href="faq.html" class="hover:text-camp-pink transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/20 mt-8 pt-8 text-center">
+                <p>&copy; 2025 愛你的心物法資拔迎新宿營. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // 下載功能
+        function downloadFile(filename) {
+            // 這裡應該連接到實際的檔案下載連結
+            alert(`正在下載：${filename}\n\n注意：這是展示版本，實際使用時請設定正確的下載連結。`);
+            // 實際應用中應該是：
+            // window.location.href = `/downloads/${filename}`;
+        }
+
+        function downloadAll() {
+            alert('正在準備下載完整包...\n\n注意：這是展示版本，實際使用時會下載包含所有文件的ZIP壓縮檔。');
+            // 實際應用中應該是：
+            // window.location.href = '/downloads/camp2025-documents.zip';
+        }
+
+        // 下載統計（可選功能）
+        function trackDownload(filename) {
+            // 追蹤下載次數，可用於統計分析
+            console.log(`Downloaded: ${filename} at ${new Date().toISOString()}`);
+        }
+    </script>
+</body>
+</html> 
