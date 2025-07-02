@@ -73,14 +73,58 @@
         </div>
     </header>
 
-    <!-- 施工中 -->
-    <section class="min-h-screen flex items-center justify-center pt-16">
-        <div class="text-center">
-            <div class="text-8xl mb-8">🚧</div>
-            <h1 class="text-6xl font-bold text-camp-brown mb-4">施工中</h1>
-            <a href="index.html" class="inline-block mt-8 bg-camp-brown text-white px-6 py-3 rounded-full hover:bg-camp-brown/80 transition-colors">
-                返回首頁
-            </a>
+    <!-- Page Title Section -->
+    <section class="pt-24 pb-12 bg-gradient-to-r from-camp-pink/20 to-camp-orange/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-camp-brown mb-4">最新消息</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                掌握宿營最新動態，不錯過任何重要資訊！
+            </p>
+        </div>
+    </section>
+
+    <!-- News Grid Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center">
+                <!-- Test News Item -->
+                <article class="news-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow max-w-2xl">
+                    <div class="bg-gradient-to-r from-camp-pink to-camp-orange px-4 py-2">
+                        <span class="text-white text-sm font-medium">測試消息</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <span>2025-07-02</span>
+                            <span class="mx-2">•</span>
+                            <span>廠商贊助</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-camp-brown mb-3 hover:text-camp-pink transition-colors cursor-pointer">
+                            測試消息標題
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            這是一則測試消息，用來測試最新消息頁面的顯示效果。如果您看到這則消息，表示頁面運作正常。
+                        </p>
+                        <button class="text-camp-brown font-medium hover:text-camp-pink transition-colors">
+                            閱讀更多 →
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pagination -->
+    <section class="py-8 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-center space-x-2">
+                <button class="px-3 py-2 text-gray-400 hover:text-camp-brown transition-colors" disabled>
+                    ← 上一頁
+                </button>
+                <button class="px-4 py-2 bg-camp-brown text-white rounded-lg">1</button>
+                <button class="px-3 py-2 text-gray-400 hover:text-camp-brown transition-colors" disabled>
+                    下一頁 →
+                </button>
+            </div>
         </div>
     </section>
 

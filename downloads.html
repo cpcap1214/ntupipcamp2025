@@ -73,18 +73,89 @@
         </div>
     </header>
 
-         <!-- 施工中 -->
-     <section class="min-h-screen flex items-center justify-center pt-16">
-         <div class="text-center">
-             <div class="text-8xl mb-8">🚧</div>
-             <h1 class="text-6xl font-bold text-camp-brown mb-4">施工中</h1>
-             <a href="index.html" class="inline-block mt-8 bg-camp-brown text-white px-6 py-3 rounded-full hover:bg-camp-brown/80 transition-colors">
-                 返回首頁
-             </a>
-         </div>
-     </section>
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-br from-camp-yellow to-camp-orange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-camp-brown mb-4">下載區</h1>
+                <p class="text-xl text-camp-brown/80 max-w-2xl mx-auto">
+                    請記得下載並填寫相關文件！
+                </p>
+            </div>
+        </div>
+    </section>
 
-         <script>
+    <!-- Downloads Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- 家長同意書 -->
+                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden group">
+                    <div class="p-8">
+                        <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-camp-pink to-camp-orange rounded-full mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-camp-brown text-center mb-4">家長同意書</h3>
+                        <p class="text-gray-600 text-center mb-6 leading-relaxed">
+                            報名時一同繳交
+                        </p>
+
+                        <a href="https://drive.google.com/file/d/1kqkCChyhYUjV6aEOXd_pNURR-UOSkkBm/view?usp=drive_link" 
+                           target="_blank"
+                           class="block w-full bg-gradient-to-r from-camp-pink to-camp-orange text-white text-center py-3 px-6 rounded-full hover:opacity-90 transition-all duration-300 font-medium group-hover:shadow-lg">
+                            <svg class="w-5 h-5 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            立即下載
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 提前離營切結書 -->
+                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden group">
+                    <div class="p-8">
+                        <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-camp-orange to-camp-yellow rounded-full mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-camp-brown text-center mb-4">提前離營切結書</h3>
+                        <p class="text-gray-600 text-center mb-6 leading-relaxed">
+                            若需要提前離營的參加者請填寫此切結書
+                        </p>
+                        <a href="https://drive.google.com/file/d/13f9g8JgSpTaymh3bzSZDZnOpD4ls116c/view?usp=drive_link" 
+                           target="_blank"
+                           class="block w-full bg-gradient-to-r from-camp-orange to-camp-yellow text-white text-center py-3 px-6 rounded-full hover:opacity-90 transition-all duration-300 font-medium group-hover:shadow-lg">
+                            <svg class="w-5 h-5 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            立即下載
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 重要提醒 -->
+            <div class="mt-16 bg-gradient-to-r from-camp-pink/10 to-camp-orange/10 rounded-2xl p-8 border border-camp-pink/20">
+                <div class="text-center">
+                    <div class="flex items-center justify-center w-12 h-12 bg-camp-brown rounded-full mb-4 mx-auto">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.664-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-camp-brown mb-3">重要提醒</h3>
+                    <div class="text-gray-600 space-y-2 max-w-3xl mx-auto">
+                        <p>• 請務必在報名時完成家長同意書填寫</p>
+                        <p>• 如有疑問請聯繫工作人員：<a href="mailto:contact@example.com" class="text-camp-pink hover:underline"></a>ntupipcamp2025@gmail.com</a></p></a>或私訊官方IG帳號</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
          // Mobile menu toggle
          document.getElementById('mobile-menu-button').addEventListener('click', function() {
              const mobileMenu = document.getElementById('mobile-menu');
@@ -96,5 +167,4 @@
          });
      </script>
 </body>
-</html>
 </html>

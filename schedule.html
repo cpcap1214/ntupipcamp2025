@@ -73,14 +73,423 @@
         </div>
     </header>
 
-    <!-- 施工中 -->
-    <section class="min-h-screen flex items-center justify-center pt-16">
-        <div class="text-center">
-            <div class="text-8xl mb-8">🚧</div>
-            <h1 class="text-6xl font-bold text-camp-brown mb-4">施工中</h1>
-            <a href="index.html" class="inline-block mt-8 bg-camp-brown text-white px-6 py-3 rounded-full hover:bg-camp-brown/80 transition-colors">
-                返回首頁
-            </a>
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-br from-camp-yellow to-camp-orange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-camp-brown mb-4">活動時程</h1>
+                <p class="text-xl text-camp-brown/80 max-w-2xl mx-auto">
+                    三天兩夜的精彩活動！
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Navigation -->
+    <section class="py-8 bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center space-x-4">
+                <button onclick="showDay(1)" id="day1-btn" class="px-6 py-3 rounded-full font-medium transition-all duration-300 bg-camp-pink text-white">
+                    8/24 (日)
+                </button>
+                <button onclick="showDay(2)" id="day2-btn" class="px-6 py-3 rounded-full font-medium transition-all duration-300 bg-gray-200 text-gray-600 hover:bg-camp-orange hover:text-white">
+                    8/25 (一)
+                </button>
+                <button onclick="showDay(3)" id="day3-btn" class="px-6 py-3 rounded-full font-medium transition-all duration-300 bg-gray-200 text-gray-600 hover:bg-camp-orange hover:text-white">
+                    8/26 (二)
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Content -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Day 1: 8/24 (日) -->
+            <div id="day1-schedule" class="schedule-day">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-camp-brown mb-2">第一天 - 8/24 (日)</h2>
+                    <p class="text-gray-600">相見歡與出發</p>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-pink">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-camp-pink text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    9:00-9:30
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">集合報到</h3>
+                                    <p class="text-gray-600">學長姐會在台大校門口等你們唷</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-orange">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-camp-orange text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    10:00-11:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">出發</h3>
+                                    <p class="text-gray-600">搭遊覽車前往合歡山莊！</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-orange">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-camp-orange text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    9:00-12:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">開幕+小破冰</h3>
+                                    <p class="text-gray-600">認識彼此！</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-yellow">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-yellow-500 text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    12:00-13:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">午餐</h3>
+                                    <p class="text-gray-600">補充體力，準備下午活動</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-pink">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-camp-pink text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    13:00-16:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">大地遊戲</h3>
+                                    <p class="text-gray-600">團隊合作闖關活動</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-orange">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-camp-orange text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    16:00-17:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">晚餐</h3>
+                                    <p class="text-gray-600">烤肉！</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-yellow">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-yellow-500 text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    17:00-18:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">海龜湯</h3>
+                                    <p class="text-gray-600">到底是甚麼呢？</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-pink">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-camp-pink text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    19:00-21:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">假案</h3>
+                                    <p class="text-gray-600">緊張刺激</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-orange">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-camp-orange text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    21:00-23:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">宵夜</h3>
+                                    <p class="text-gray-600">累了一天，吃點宵夜準備洗漱，進入夢鄉！</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2: 8/25 (一) -->
+            <div id="day2-schedule" class="schedule-day hidden">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-camp-brown mb-2">第二天 - 8/25 (一)</h2>
+                    <p class="text-gray-600">營期的精彩活動</p>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-pink">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-camp-pink text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    8:30-9:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">早餐</h3>
+                                    <p class="text-gray-600">美好一天的開始</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-orange">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-camp-orange text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    9:00-12:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">賭場+競標</h3>
+                                    <p class="text-gray-600">各種挑戰等你來賺到一桶金</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-yellow">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-yellow-500 text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    12:00-13:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">午餐時光</h3>
+                                    <p class="text-gray-600">補充體力</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-pink">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-camp-pink text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    13:00-16:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">水大地</h3>
+                                    <p class="text-gray-600">清涼一夏</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-orange">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-camp-orange text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    16:00-17:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">盥洗・休息</h3>
+                                    <p class="text-gray-600">休息整理，準備晚間活動</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-yellow">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-yellow-500 text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    17:00-19:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">晚餐 + 時光機</h3>
+                                    <p class="text-gray-600">時光機！</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-pink">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-camp-pink text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    19:00-21:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">晚會+營火</h3>
+                                    <p class="text-gray-600">晚會會有甚麼呢？</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-orange">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-camp-orange text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    21:00-23:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">宵夜</h3>
+                                    <p class="text-gray-600">累了一天，吃點宵夜準備洗漱，進入夢鄉！</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 3: 8/26 (二) -->
+            <div id="day3-schedule" class="schedule-day hidden">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-camp-brown mb-2">第三天 - 8/26 (二)</h2>
+                    <p class="text-gray-600">滿載而歸！</p>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-pink">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-camp-pink text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    8:30-9:30
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">放行李・收房卡</h3>
+                                    <p class="text-gray-600">整理行李</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-orange">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-camp-orange text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    9:30-10:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">早餐時光</h3>
+                                    <p class="text-gray-600">補充體力，準備下午活動</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-yellow">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-yellow-500 text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    10:00-12:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">RPG活動</h3>
+                                    <p class="text-gray-600">角色扮演遊戲體驗</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-pink">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-camp-pink text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    12:00-13:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">午餐時光</h3>
+                                    <p class="text-gray-600">最後的午餐</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-orange">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-camp-orange text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    13:00-15:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">系間活動</h3>
+                                    <p class="text-gray-600">三系競賽</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-yellow">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-yellow-500 text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    15:00-17:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">閉幕</h3>
+                                    <p class="text-gray-600">誰會成為最後的贏家？</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-camp-pink">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="bg-camp-pink text-white rounded-full px-4 py-2 font-bold mr-4">
+                                    17:00-19:00
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-camp-brown">回程</h3>
+                                    <p class="text-gray-600">帶著滿滿回憶回家</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 溫馨提醒 -->
+            <div class="mt-16 bg-gradient-to-r from-camp-pink/10 to-camp-orange/10 rounded-2xl p-8 border border-camp-pink/20">
+                <div class="text-center">
+                    <div class="flex items-center justify-center w-12 h-12 bg-camp-brown rounded-full mb-4 mx-auto">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-camp-brown mb-3">溫馨提醒</h3>
+                    <div class="text-gray-600 space-y-2 max-w-3xl mx-auto">
+                        <p>• 第一天有假案活動，請<strong style="color: red;">避免配有紅色元素的服飾</strong></p>
+                        <p>• 第二天有水大地，請<strong style="color: rgb(219, 202, 19);">避免穿淺色衣服</strong></p>
+                        <p>• 第三天會發營服給大家穿唷！</p>
+                        <p>• 活動時程可能因其他因素而有所調整</p>
+                        <p>• 如有身體不適請立即告知工作人員</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -94,6 +503,28 @@
                 mobileMenu.style.display = 'none';
             }
         });
+        
+        // Schedule day switching function
+        function showDay(day) {
+            // Hide all schedule days
+            document.querySelectorAll('.schedule-day').forEach(el => {
+                el.classList.add('hidden');
+            });
+            
+            // Reset all buttons
+            document.querySelectorAll('[id$="-btn"]').forEach(btn => {
+                btn.classList.remove('bg-camp-pink', 'text-white');
+                btn.classList.add('bg-gray-200', 'text-gray-600', 'hover:bg-camp-orange', 'hover:text-white');
+            });
+            
+            // Show selected day
+            document.getElementById(`day${day}-schedule`).classList.remove('hidden');
+            
+            // Highlight selected button
+            const selectedBtn = document.getElementById(`day${day}-btn`);
+            selectedBtn.classList.remove('bg-gray-200', 'text-gray-600', 'hover:bg-camp-orange', 'hover:text-white');
+            selectedBtn.classList.add('bg-camp-pink', 'text-white');
+        }
     </script>
 </body>
 </html>
