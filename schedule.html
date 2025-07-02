@@ -23,54 +23,33 @@
             }
         }
     </script>
-    <style>
-        .timeline-item {
-            position: relative;
-            padding-left: 2rem;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.5rem;
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #FFB6C1, #FFD4C4);
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px rgba(255, 182, 193, 0.3);
-        }
-        .timeline-line {
-            position: absolute;
-            left: 0.5rem;
-            top: 1.5rem;
-            bottom: -1rem;
-            width: 2px;
-            background: linear-gradient(to bottom, #FFB6C1, #FFD4C4);
-        }
-        .timeline-item:last-child .timeline-line {
-            display: none;
-        }
-    </style>
 </head>
 <body class="font-chinese bg-white min-h-screen">
-    <!-- 導覽列 -->
-    <nav class="bg-white/90 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-sm shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
+            <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <h1 class="text-xl font-bold text-camp-brown">愛你的心物法資拔</h1>
+                    <a href="index.html">
+                        <img src="assets/mainpage.png" alt="愛你的心物法資拔" class="h-12 w-auto hover:opacity-80 transition-opacity">
+                    </a>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
+                
+                <!-- Desktop Navigation -->
+                <nav class="desktop-menu hidden md:flex items-center space-x-8">
                     <a href="index.html" class="text-camp-brown hover:text-camp-pink transition-colors">首頁</a>
                     <a href="news.html" class="text-camp-brown hover:text-camp-pink transition-colors">最新消息</a>
                     <a href="schedule.html" class="text-camp-brown font-medium hover:text-camp-pink transition-colors">活動時程</a>
                     <a href="team.html" class="text-camp-brown hover:text-camp-pink transition-colors">團隊介紹</a>
                     <a href="downloads.html" class="text-camp-brown hover:text-camp-pink transition-colors">下載區</a>
                     <a href="faq.html" class="text-camp-brown hover:text-camp-pink transition-colors">FAQ</a>
-                </div>
-                <!-- 手機選單按鈕 -->
-                <div class="md:hidden flex items-center">
+                    <a href="https://forms.gle/QyXHTfoXtp8fRMq16" target="_blank" class="bg-gradient-to-r from-camp-pink to-camp-orange text-white px-4 py-2 rounded-full hover:opacity-80 transition-opacity inline-block">
+                        點我報名
+                    </a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-camp-brown hover:text-camp-pink">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -79,8 +58,9 @@
                 </div>
             </div>
         </div>
-        <!-- 手機選單 -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-sm">
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white/95 backdrop-blur-sm" style="display: none;">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="index.html" class="block px-3 py-2 text-camp-brown">首頁</a>
                 <a href="news.html" class="block px-3 py-2 text-camp-brown">最新消息</a>
@@ -88,405 +68,32 @@
                 <a href="team.html" class="block px-3 py-2 text-camp-brown">團隊介紹</a>
                 <a href="downloads.html" class="block px-3 py-2 text-camp-brown">下載區</a>
                 <a href="faq.html" class="block px-3 py-2 text-camp-brown">FAQ</a>
+                <a href="https://forms.gle/QyXHTfoXtp8fRMq16" target="_blank" class="block w-full text-left px-3 py-2 text-camp-brown">點我報名</a>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- 頁面標題 -->
-    <section class="py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-camp-brown mb-4">⏰ 活動時程</h1>
-            <p class="text-lg text-camp-brown/70 mb-8">三天兩夜精彩行程安排</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <div class="bg-white/80 backdrop-blur-sm rounded-full px-6 py-2 shadow-lg">
-                    <span class="text-camp-brown font-medium">📅 2025.08.24 (六)</span>
-                </div>
-                <div class="bg-white/80 backdrop-blur-sm rounded-full px-6 py-2 shadow-lg">
-                    <span class="text-camp-brown font-medium">📅 2025.08.25 (日)</span>
-                </div>
-                <div class="bg-white/80 backdrop-blur-sm rounded-full px-6 py-2 shadow-lg">
-                    <span class="text-camp-brown font-medium">📅 2025.08.26 (一)</span>
-                </div>
-            </div>
+    <!-- 施工中 -->
+    <section class="min-h-screen flex items-center justify-center pt-16">
+        <div class="text-center">
+            <div class="text-8xl mb-8">🚧</div>
+            <h1 class="text-6xl font-bold text-camp-brown mb-4">施工中</h1>
+            <a href="index.html" class="inline-block mt-8 bg-camp-brown text-white px-6 py-3 rounded-full hover:bg-camp-brown/80 transition-colors">
+                返回首頁
+            </a>
         </div>
     </section>
 
-    <!-- 時程內容 -->
-    <section class="pb-16">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- 第一天 -->
-            <div class="mb-16">
-                <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-camp-brown mb-2">第一天</h2>
-                    <p class="text-xl text-camp-brown/80">2025年8月24日（六）</p>
-                    <div class="text-4xl mt-4">🌟</div>
-                </div>
-                
-                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg">
-                    <div class="space-y-6">
-                        <div class="timeline-item">
-                            <div class="timeline-line"></div>
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">08:00 - 08:30</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">集合報到</h4>
-                                    <p class="text-camp-brown/70">台大校門口集合，統一搭乘遊覽車前往基地</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">🚌</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-line"></div>
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">10:00 - 10:30</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">抵達基地 & 環境介紹</h4>
-                                    <p class="text-camp-brown/70">認識營地環境，了解安全須知</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">🏕️</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-line"></div>
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">10:30 - 12:00</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">破冰遊戲</h4>
-                                    <p class="text-camp-brown/70">三系融合的趣味團康活動，快速認識新朋友</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">🎮</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-line"></div>
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">12:00 - 13:30</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">午餐時光</h4>
-                                    <p class="text-camp-brown/70">享用豐盛午餐，同桌聊天交流</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">🍽️</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-line"></div>
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">13:30 - 15:00</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">系所介紹</h4>
-                                    <p class="text-camp-brown/70">資管、心理、物治三系特色介紹與學長姐經驗分享</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">🎓</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-line"></div>
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">15:00 - 17:00</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">戶外探索活動</h4>
-                                    <p class="text-camp-brown/70">分組進行定向越野、自然觀察等活動</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">🌲</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-line"></div>
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">17:00 - 18:30</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">晚餐 & 休息</h4>
-                                    <p class="text-camp-brown/70">享用晚餐，準備晚上的精彩活動</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">🌅</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-line"></div>
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">19:00 - 21:30</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">營火晚會</h4>
-                                    <p class="text-camp-brown/70">圍坐營火旁，唱歌跳舞、分享故事</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">🔥</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">22:00</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">就寢時間</h4>
-                                    <p class="text-camp-brown/70">回到住宿區域，準備第二天的行程</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">🌙</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 第二天 -->
-            <div class="mb-16">
-                <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-camp-brown mb-2">第二天</h2>
-                    <p class="text-xl text-camp-brown/80">2025年8月25日（日）</p>
-                    <div class="text-4xl mt-4">🌞</div>
-                </div>
-                
-                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg">
-                    <div class="space-y-6">
-                        <div class="timeline-item">
-                            <div class="timeline-line"></div>
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">07:00 - 08:00</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">晨間活動</h4>
-                                    <p class="text-camp-brown/70">自由選擇：晨跑、瑜伽或散步欣賞日出</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">🏃‍♀️</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-line"></div>
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">08:00 - 09:00</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">早餐時光</h4>
-                                    <p class="text-camp-brown/70">營養豐富的早餐，為一天注入活力</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">🥞</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-line"></div>
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">09:00 - 11:00</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">小隊競賽</h4>
-                                    <p class="text-camp-brown/70">三系混合分組，進行趣味競賽活動</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">🏆</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-line"></div>
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">11:00 - 12:00</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">專業體驗工作坊</h4>
-                                    <p class="text-camp-brown/70">分系進行專業領域的體驗活動</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">🔬</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-line"></div>
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">12:00 - 13:30</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">午餐與午休</h4>
-                                    <p class="text-camp-brown/70">享用午餐後稍作休息</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">😴</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-line"></div>
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">13:30 - 16:00</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">創意手作時間</h4>
-                                    <p class="text-camp-brown/70">製作營隊紀念品，發揮創意與團隊合作</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">🎨</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-line"></div>
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">16:00 - 18:00</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">自然探索</h4>
-                                    <p class="text-camp-brown/70">生態導覽、攝影記錄美好時光</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">📸</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-line"></div>
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">18:00 - 19:30</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">BBQ 晚餐</h4>
-                                    <p class="text-camp-brown/70">戶外烤肉，享受美食與歡笑</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">🍖</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-line"></div>
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">20:00 - 22:00</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">才藝表演夜</h4>
-                                    <p class="text-camp-brown/70">展現個人才藝，欣賞同學精彩演出</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">🎭</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">22:30</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">夜晚分享時間</h4>
-                                    <p class="text-camp-brown/70">小組分享今日感想與收穫</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">💭</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 第三天 -->
-            <div class="mb-16">
-                <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-camp-brown mb-2">第三天</h2>
-                    <p class="text-xl text-camp-brown/80">2025年8月26日（一）</p>
-                    <div class="text-4xl mt-4">🎯</div>
-                </div>
-                
-                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg">
-                    <div class="space-y-6">
-                        <div class="timeline-item">
-                            <div class="timeline-line"></div>
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">08:00 - 09:00</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">早餐 & 收拾行李</h4>
-                                    <p class="text-camp-brown/70">享用最後一頓營隊早餐，整理個人物品</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">🎒</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-line"></div>
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">09:00 - 10:30</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">團體照 & 紀念品製作完成</h4>
-                                    <p class="text-camp-brown/70">拍攝營隊大合照，完成個人紀念品</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">📷</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-line"></div>
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">10:30 - 11:30</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">結業式</h4>
-                                    <p class="text-camp-brown/70">頒發參與證書，營隊心得分享</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">🏅</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-line"></div>
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">11:30 - 12:00</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">惜別時光</h4>
-                                    <p class="text-camp-brown/70">互留聯絡方式，相約未來再聚</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">🤗</div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-bold text-camp-brown mb-2">12:00 - 14:00</h3>
-                                    <h4 class="text-lg font-semibold text-camp-brown/90 mb-2">賦歸</h4>
-                                    <p class="text-camp-brown/70">搭乘遊覽車返回台大，圓滿結束營隊</p>
-                                </div>
-                                <div class="text-3xl mt-2 md:mt-0">🏠</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 注意事項 -->
-            <div class="bg-gradient-to-r from-camp-pink/20 to-camp-orange/20 border-l-4 border-camp-pink rounded-lg p-6">
-                <h3 class="text-xl font-bold text-camp-brown mb-4 flex items-center">
-                    <span class="text-2xl mr-3">⚠️</span>
-                    重要注意事項
-                </h3>
-                <ul class="space-y-2 text-camp-brown/80">
-                    <li>• 時程可能因天候或其他因素調整，實際活動以現場公告為準</li>
-                    <li>• 請準時參與各項活動，如有身體不適請立即告知工作人員</li>
-                    <li>• 戶外活動請注意防曬與補充水分</li>
-                    <li>• 營火活動視天候狀況調整，必要時改為室內替代活動</li>
-                    <li>• 請愛護自然環境，落實無痕山林原則</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- 頁尾 -->
-    <footer class="bg-camp-brown text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">聯絡資訊</h3>
-                    <p class="mb-2">國立台灣大學</p>
-                    <p class="mb-2">資訊管理學系、心理學系、物理治療學系</p>
-                    <p>Email: camp2025@ntu.edu.tw</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">活動資訊</h3>
-                    <p class="mb-2">時間：2025.08.24 - 08.26</p>
-                    <p class="mb-2">地點：合歡自然生活體驗基地</p>
-                    <p>對象：台大資管、心理、物治三系新生</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">快速連結</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="hover:text-camp-pink transition-colors">首頁</a></li>
-                        <li><a href="news.html" class="hover:text-camp-pink transition-colors">最新消息</a></li>
-                        <li><a href="downloads.html" class="hover:text-camp-pink transition-colors">下載區</a></li>
-                        <li><a href="faq.html" class="hover:text-camp-pink transition-colors">FAQ</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-white/20 mt-8 pt-8 text-center">
-                <p>&copy; 2025 愛你的心物法資拔迎新宿營. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+                mobileMenu.style.display = 'block';
+            } else {
+                mobileMenu.style.display = 'none';
+            }
+        });
+    </script>
 </body>
-</html> 
+</html>

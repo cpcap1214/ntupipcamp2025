@@ -25,32 +25,167 @@
     </script>
     <style>
         .team-card {
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            border: 1px solid rgba(255, 255, 255, 0.8);
         }
+        
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(145deg, rgba(255, 182, 193, 0.1), rgba(255, 212, 196, 0.1));
+            border-radius: inherit;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+        
+        .team-card:hover::before {
+            opacity: 1;
+        }
+        
         .team-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(139, 69, 19, 0.2), 0 10px 20px rgba(255, 182, 193, 0.3);
         }
+        
+        .team-card > * {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .photo-frame {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            padding: 4px;
+            transition: all 0.4s ease;
+        }
+        
+        .team-card:hover .photo-frame {
+            background: linear-gradient(145deg, rgba(255, 182, 193, 0.3), rgba(255, 212, 196, 0.2));
+            transform: scale(1.05);
+        }
+        
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 20s infinite linear;
+        }
+        
+        .shape:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #FFB6C1, #FFD4C4);
+            border-radius: 50%;
+            animation-delay: 0s;
+        }
+        
+        .shape:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #FFF2CC, #FFB6C1);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation-delay: -5s;
+        }
+        
+        .shape:nth-child(3) {
+            bottom: 30%;
+            left: 20%;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #8B4513, #FFD4C4);
+            border-radius: 20px;
+            animation-delay: -10s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(120deg); }
+            66% { transform: translateY(10px) rotate(240deg); }
+        }
+        
+        .section-divider {
+            background: linear-gradient(90deg, transparent, rgba(139, 69, 19, 0.3), transparent);
+            height: 1px;
+            margin: 3rem 0;
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #8B4513, #FFB6C1, #FFD4C4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .animate-fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+        .stagger-6 { animation-delay: 0.6s; }
     </style>
 </head>
 <body class="font-chinese bg-white min-h-screen">
-    <!-- 導覽列 -->
-    <nav class="bg-white/90 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-sm shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
+            <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <h1 class="text-xl font-bold text-camp-brown">愛你的心物法資拔</h1>
+                    <a href="index.html">
+                        <img src="assets/mainpage.png" alt="愛你的心物法資拔" class="h-12 w-auto hover:opacity-80 transition-opacity">
+                    </a>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
+                
+                <!-- Desktop Navigation -->
+                <nav class="desktop-menu hidden md:flex items-center space-x-8">
                     <a href="index.html" class="text-camp-brown hover:text-camp-pink transition-colors">首頁</a>
                     <a href="news.html" class="text-camp-brown hover:text-camp-pink transition-colors">最新消息</a>
                     <a href="schedule.html" class="text-camp-brown hover:text-camp-pink transition-colors">活動時程</a>
                     <a href="team.html" class="text-camp-brown font-medium hover:text-camp-pink transition-colors">團隊介紹</a>
                     <a href="downloads.html" class="text-camp-brown hover:text-camp-pink transition-colors">下載區</a>
                     <a href="faq.html" class="text-camp-brown hover:text-camp-pink transition-colors">FAQ</a>
-                </div>
-                <!-- 手機選單按鈕 -->
-                <div class="md:hidden flex items-center">
+                    <a href="https://forms.gle/QyXHTfoXtp8fRMq16" target="_blank" class="bg-gradient-to-r from-camp-pink to-camp-orange text-white px-4 py-2 rounded-full hover:opacity-80 transition-opacity inline-block">
+                        點我報名
+                    </a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-camp-brown hover:text-camp-pink">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -59,8 +194,9 @@
                 </div>
             </div>
         </div>
-        <!-- 手機選單 -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-sm">
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white/95 backdrop-blur-sm" style="display: none;">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="index.html" class="block px-3 py-2 text-camp-brown">首頁</a>
                 <a href="news.html" class="block px-3 py-2 text-camp-brown">最新消息</a>
@@ -68,304 +204,275 @@
                 <a href="team.html" class="block px-3 py-2 text-camp-brown font-medium">團隊介紹</a>
                 <a href="downloads.html" class="block px-3 py-2 text-camp-brown">下載區</a>
                 <a href="faq.html" class="block px-3 py-2 text-camp-brown">FAQ</a>
+                <a href="https://forms.gle/QyXHTfoXtp8fRMq16" target="_blank" class="block w-full text-left px-3 py-2 text-camp-brown">點我報名</a>
             </div>
         </div>
-    </nav>
+    </header>
 
     <!-- 頁面標題 -->
-    <section class="py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-camp-brown mb-4">👥 團隊介紹</h1>
-            <p class="text-lg text-camp-brown/70 mb-8">認識我們的工作團隊與隊輔</p>
-            <div class="text-6xl mb-8">🌟</div>
+    <section class="relative py-24 pt-40 bg-gradient-to-br from-camp-yellow/20 via-camp-orange/30 to-camp-pink/40 overflow-hidden">
+        <!-- 動態背景形狀 -->
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        
+        <!-- 主要背景層 -->
+        <div class="absolute inset-0 bg-gradient-to-b from-white/40 via-white/60 to-white/80"></div>
+        
+        <!-- 裝飾性網格 -->
+        <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 2px 2px, #8B4513 1px, transparent 0); background-size: 40px 40px;"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-fade-in">
+                <div class="inline-block mb-8">
+                    <h1 class="text-6xl md:text-7xl font-bold text-camp-brown mb-6 tracking-tight">團隊介紹</h1>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- 籌備委員會 -->
-    <section class="pb-16">
+    <section class="py-20 bg-gradient-to-b from-white to-gray-50/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-camp-brown mb-4">籌備委員會</h2>
-                <p class="text-camp-brown/70">負責策劃與執行本次迎新宿營的核心團隊</p>
+            <div class="text-center mb-16">
+                <div class="inline-block relative">
+                    <h2 class="text-4xl font-bold text-camp-brown mb-4">召部</h2>
+                    <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-camp-pink to-camp-orange"></div>
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                <!-- 總召集人 -->
-                <div class="team-card bg-gradient-to-br from-camp-pink to-camp-orange rounded-3xl p-8 text-white text-center shadow-lg">
-                    <div class="w-24 h-24 bg-white/30 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <span class="text-4xl">👑</span>
+            <!-- 召部成員按系別分組 -->
+            <!-- 資管系召部 -->
+            <div class="mb-20">
+                <div class="relative text-center mb-12">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-full border-t border-blue-200"></div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">王小明</h3>
-                    <p class="text-white/90 mb-3">總召集人</p>
-                    <p class="text-sm text-white/80 mb-4">資訊管理學系 三年級</p>
-                    <p class="text-sm text-white/80 leading-relaxed">
-                        "希望透過這次營隊，讓大家都能找到志同道合的夥伴，創造美好的大學回憶！"
-                    </p>
+                    <div class="relative bg-white px-8">
+                        <h3 class="text-2xl font-bold mb-2 text-camp-brown">資訊管理學系</h3>
+                    </div>
                 </div>
-
-                <!-- 副召集人 -->
-                <div class="team-card bg-white/80 backdrop-blur-sm rounded-3xl p-8 text-center shadow-lg">
-                    <div class="w-24 h-24 bg-camp-pink/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <span class="text-4xl">⭐</span>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="team-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl text-center transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/50">
+                        <div class="relative w-64 h-64 mx-auto rounded-2xl overflow-hidden shadow-lg mb-6 ring-4 ring-white group-hover:ring-camp-pink/20 transition-all duration-300">
+                            <img src="assets/img/people/head/im1.jpg" alt="副召集人" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-camp-brown mb-3 group-hover:text-camp-brown/80 transition-colors">王姿涵</h3>
+                        <div class="inline-block px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 rounded-full">
+                            <p class="text-camp-brown/80 text-sm font-medium">副召</p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-camp-brown mb-2">李小華</h3>
-                    <p class="text-camp-brown/80 mb-3">副召集人</p>
-                    <p class="text-sm text-camp-brown/60 mb-4">心理學系 三年級</p>
-                    <p class="text-sm text-camp-brown/70 leading-relaxed">
-                        "用心理學的角度設計活動，讓每個人都能在營隊中找到歸屬感！"
-                    </p>
+                    
+                    <div class="team-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl text-center transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/50">
+                        <div class="relative w-64 h-64 mx-auto rounded-2xl overflow-hidden shadow-lg mb-6 ring-4 ring-white group-hover:ring-camp-pink/20 transition-all duration-300">
+                            <img src="assets/img/people/head/im2.jpg" alt="副召集人" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-camp-brown mb-3 group-hover:text-camp-brown/80 transition-colors">鍾心哲</h3>
+                        <div class="inline-block px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 rounded-full">
+                            <p class="text-camp-brown/80 text-sm font-medium">副召</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl text-center transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/50">
+                        <div class="relative w-64 h-64 mx-auto rounded-2xl overflow-hidden shadow-lg mb-6 ring-4 ring-white group-hover:ring-camp-pink/20 transition-all duration-300">
+                            <img src="assets/img/people/head/im3.jpg" alt="召部成員" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-camp-brown mb-3 group-hover:text-camp-brown/80 transition-colors">陳鼎元</h3>
+                        <div class="inline-block px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 rounded-full">
+                            <p class="text-camp-brown/80 text-sm font-medium">副召</p>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <div class="team-card bg-white/80 backdrop-blur-sm rounded-3xl p-8 text-center shadow-lg">
-                    <div class="w-24 h-24 bg-camp-orange/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <span class="text-4xl">⭐</span>
+            <!-- 心理系召部 -->
+            <div class="mb-20">
+                <div class="relative text-center mb-12">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-full border-t border-purple-200"></div>
                     </div>
-                    <h3 class="text-xl font-bold text-camp-brown mb-2">張小美</h3>
-                    <p class="text-camp-brown/80 mb-3">副召集人</p>
-                    <p class="text-sm text-camp-brown/60 mb-4">物理治療學系 三年級</p>
-                    <p class="text-sm text-camp-brown/70 leading-relaxed">
-                        "結合物治專業，設計安全又有趣的體驗活動，照顧每個人的身心健康！"
-                    </p>
+                    <div class="relative bg-white px-8">
+                        <h3 class="text-2xl font-bold mb-2 text-camp-brown">心理學系</h3>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="team-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl text-center transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/50">
+                        <div class="relative w-64 h-64 mx-auto rounded-2xl overflow-hidden shadow-lg mb-6 ring-4 ring-white group-hover:ring-camp-pink/20 transition-all duration-300">
+                            <img src="assets/img/people/head/psy1.jpg" alt="副召集人" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-camp-brown mb-3 group-hover:text-camp-brown/80 transition-colors">黃祉誠</h3>
+                        <div class="inline-block px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 rounded-full">
+                            <p class="text-camp-brown/80 text-sm font-medium">總召</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl text-center transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/50">
+                        <div class="relative w-64 h-64 mx-auto rounded-2xl overflow-hidden shadow-lg mb-6 ring-4 ring-white group-hover:ring-camp-pink/20 transition-all duration-300">
+                            <img src="assets/img/people/head/psy2.jpg" alt="召部成員" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-camp-brown mb-3 group-hover:text-camp-brown/80 transition-colors">郭心宥</h3>
+                        <div class="inline-block px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 rounded-full">
+                            <p class="text-camp-brown/80 text-sm font-medium">副召</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl text-center transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/50">
+                        <div class="relative w-64 h-64 mx-auto rounded-2xl overflow-hidden shadow-lg mb-6 ring-4 ring-white group-hover:ring-camp-pink/20 transition-all duration-300">
+                            <img src="assets/img/people/head/psy3.jpg" alt="召部成員" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-camp-brown mb-3 group-hover:text-camp-brown/80 transition-colors">張有璿</h3>
+                        <div class="inline-block px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 rounded-full">
+                            <p class="text-camp-brown/80 text-sm font-medium">副召</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 物治系召部 -->
+            <div class="mb-20">
+                <div class="relative text-center mb-12">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-full border-t border-green-200"></div>
+                    </div>
+                    <div class="relative bg-white px-8">
+                        <h3 class="text-2xl font-bold mb-2 text-camp-brown">物理治療學系</h3>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="team-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl text-center transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/50">
+                        <div class="relative w-64 h-64 mx-auto rounded-2xl overflow-hidden shadow-lg mb-6 ring-4 ring-white group-hover:ring-camp-pink/20 transition-all duration-300">
+                            <img src="assets/img/people/head/pt1.jpg" alt="副召集人" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-camp-brown mb-3 group-hover:text-camp-brown/80 transition-colors">陳玟伶</h3>
+                        <div class="inline-block px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 rounded-full">
+                            <p class="text-camp-brown/80 text-sm font-medium">總召</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl text-center transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/50">
+                        <div class="relative w-64 h-64 mx-auto rounded-2xl overflow-hidden shadow-lg mb-6 ring-4 ring-white group-hover:ring-camp-pink/20 transition-all duration-300">
+                            <img src="assets/img/people/head/pt2.jpg" alt="召部成員" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-camp-brown mb-3 group-hover:text-camp-brown/80 transition-colors">江柏霖</h3>
+                        <div class="inline-block px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 rounded-full">
+                            <p class="text-camp-brown/80 text-sm font-medium">副召</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl text-center transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/50">
+                        <div class="relative w-64 h-64 mx-auto rounded-2xl overflow-hidden shadow-lg mb-6 ring-4 ring-white group-hover:ring-camp-pink/20 transition-all duration-300">
+                            <img src="assets/img/people/head/pt3.jpg" alt="召部成員" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-camp-brown mb-3 group-hover:text-camp-brown/80 transition-colors">蘇彥斌</h3>
+                        <div class="inline-block px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 rounded-full">
+                            <p class="text-camp-brown/80 text-sm font-medium">副召</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- 各組組長 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-                <div class="team-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 text-center shadow-lg">
-                    <div class="w-16 h-16 bg-camp-pink/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <span class="text-2xl">🎯</span>
+            <div class="mb-20 bg-gradient-to-b from-gray-50/50 to-white py-16 -mx-8 px-8 rounded-3xl">
+                <div class="relative text-center mb-12">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-full border-t border-camp-brown/20"></div>
                     </div>
-                    <h3 class="text-lg font-bold text-camp-brown mb-2">陳小傑</h3>
-                    <p class="text-camp-brown/80 mb-1">活動組組長</p>
-                    <p class="text-sm text-camp-brown/60">資管系 二年級</p>
-                </div>
-
-                <div class="team-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 text-center shadow-lg">
-                    <div class="w-16 h-16 bg-camp-orange/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <span class="text-2xl">🏠</span>
-                    </div>
-                    <h3 class="text-lg font-bold text-camp-brown mb-2">林小雅</h3>
-                    <p class="text-camp-brown/80 mb-1">生活組組長</p>
-                    <p class="text-sm text-camp-brown/60">心理系 二年級</p>
-                </div>
-
-                <div class="team-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 text-center shadow-lg">
-                    <div class="w-16 h-16 bg-camp-yellow/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <span class="text-2xl">🍽️</span>
-                    </div>
-                    <h3 class="text-lg font-bold text-camp-brown mb-2">黃小強</h3>
-                    <p class="text-camp-brown/80 mb-1">膳食組組長</p>
-                    <p class="text-sm text-camp-brown/60">物治系 二年級</p>
-                </div>
-
-                <div class="team-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 text-center shadow-lg">
-                    <div class="w-16 h-16 bg-camp-pink/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <span class="text-2xl">🚗</span>
-                    </div>
-                    <h3 class="text-lg font-bold text-camp-brown mb-2">吳小芬</h3>
-                    <p class="text-camp-brown/80 mb-1">交通組組長</p>
-                    <p class="text-sm text-camp-brown/60">資管系 二年級</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 隊輔團隊 -->
-    <section class="py-16 bg-white/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-camp-brown mb-4">隊輔團隊</h2>
-                <p class="text-camp-brown/70">溫暖親切的學長姐們，陪伴大家度過精彩的三天兩夜</p>
-            </div>
-
-            <!-- 資管系隊輔 -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold text-camp-brown mb-6 text-center">
-                    <span class="bg-gradient-to-r from-camp-pink to-camp-orange bg-clip-text text-transparent">資訊管理學系</span>
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="team-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 text-center shadow-lg">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-2xl">💻</span>
-                        </div>
-                        <h4 class="text-lg font-bold text-camp-brown mb-2">程小碼</h4>
-                        <p class="text-camp-brown/80 mb-1">資管系 二年級</p>
-                        <p class="text-sm text-camp-brown/60">"用程式解決問題"</p>
-                    </div>
-
-                    <div class="team-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 text-center shadow-lg">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-2xl">📊</span>
-                        </div>
-                        <h4 class="text-lg font-bold text-camp-brown mb-2">資小料</h4>
-                        <p class="text-camp-brown/80 mb-1">資管系 三年級</p>
-                        <p class="text-sm text-camp-brown/60">"數據分析達人"</p>
-                    </div>
-
-                    <div class="team-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 text-center shadow-lg">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-2xl">🔧</span>
-                        </div>
-                        <h4 class="text-lg font-bold text-camp-brown mb-2">系小統</h4>
-                        <p class="text-camp-brown/80 mb-1">資管系 三年級</p>
-                        <p class="text-sm text-camp-brown/60">"系統設計專家"</p>
-                    </div>
-
-                    <div class="team-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 text-center shadow-lg">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-2xl">🌐</span>
-                        </div>
-                        <h4 class="text-lg font-bold text-camp-brown mb-2">網小頁</h4>
-                        <p class="text-camp-brown/80 mb-1">資管系 二年級</p>
-                        <p class="text-sm text-camp-brown/60">"前端開發高手"</p>
+                    <div class="relative bg-white px-8">
+                        <h3 class="text-3xl font-bold mb-2 text-camp-brown">各組組長</h3>
                     </div>
                 </div>
-            </div>
-
-            <!-- 心理系隊輔 -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold text-camp-brown mb-6 text-center">
-                    <span class="bg-gradient-to-r from-camp-pink to-camp-orange bg-clip-text text-transparent">心理學系</span>
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="team-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 text-center shadow-lg">
-                        <div class="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-2xl">🧠</span>
-                        </div>
-                        <h4 class="text-lg font-bold text-camp-brown mb-2">心小理</h4>
-                        <p class="text-camp-brown/80 mb-1">心理系 三年級</p>
-                        <p class="text-sm text-camp-brown/60">"傾聽心靈的聲音"</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="team-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl text-center transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/50">
+                    <div class="relative w-64 h-64 mx-auto rounded-2xl overflow-hidden shadow-lg mb-6 ring-4 ring-white group-hover:ring-camp-pink/20 transition-all duration-300">
+                        <img src="assets/img/people/activity1.jpg" alt="活動組組長" class="w-full h-full object-cover">
                     </div>
-
-                    <div class="team-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 text-center shadow-lg">
-                        <div class="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-2xl">💭</span>
-                        </div>
-                        <h4 class="text-lg font-bold text-camp-brown mb-2">思小考</h4>
-                        <p class="text-camp-brown/80 mb-1">心理系 二年級</p>
-                        <p class="text-sm text-camp-brown/60">"人格特質觀察家"</p>
-                    </div>
-
-                    <div class="team-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 text-center shadow-lg">
-                        <div class="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-2xl">🎭</span>
-                        </div>
-                        <h4 class="text-lg font-bold text-camp-brown mb-2">情小緒</h4>
-                        <p class="text-camp-brown/80 mb-1">心理系 三年級</p>
-                        <p class="text-sm text-camp-brown/60">"情緒管理達人"</p>
-                    </div>
-
-                    <div class="team-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 text-center shadow-lg">
-                        <div class="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-2xl">🔍</span>
-                        </div>
-                        <h4 class="text-lg font-bold text-camp-brown mb-2">行小為</h4>
-                        <p class="text-camp-brown/80 mb-1">心理系 二年級</p>
-                        <p class="text-sm text-camp-brown/60">"行為分析專家"</p>
+                    <h3 class="text-xl font-bold text-camp-brown mb-3 group-hover:text-camp-brown/80 transition-colors">葉諭陽</h3>
+                    <div class="inline-block px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 rounded-full">
+                        <p class="text-camp-brown/80 text-sm font-medium">活動組組長</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- 物治系隊輔 -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold text-camp-brown mb-6 text-center">
-                    <span class="bg-gradient-to-r from-camp-pink to-camp-orange bg-clip-text text-transparent">物理治療學系</span>
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="team-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 text-center shadow-lg">
-                        <div class="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-2xl">🏃‍♂️</span>
-                        </div>
-                        <h4 class="text-lg font-bold text-camp-brown mb-2">運小動</h4>
-                        <p class="text-camp-brown/80 mb-1">物治系 三年級</p>
-                        <p class="text-sm text-camp-brown/60">"運動治療專家"</p>
+                <div class="team-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl text-center transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/50">
+                    <div class="relative w-64 h-64 mx-auto rounded-2xl overflow-hidden shadow-lg mb-6 ring-4 ring-white group-hover:ring-camp-pink/20 transition-all duration-300">
+                        <img src="assets/img/people/activity2.jpg" alt="活動組組長" class="w-full h-full object-cover">
                     </div>
-
-                    <div class="team-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 text-center shadow-lg">
-                        <div class="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-2xl">🤲</span>
-                        </div>
-                        <h4 class="text-lg font-bold text-camp-brown mb-2">手小法</h4>
-                        <p class="text-camp-brown/80 mb-1">物治系 二年級</p>
-                        <p class="text-sm text-camp-brown/60">"徒手治療高手"</p>
-                    </div>
-
-                    <div class="team-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 text-center shadow-lg">
-                        <div class="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-2xl">🏥</span>
-                        </div>
-                        <h4 class="text-lg font-bold text-camp-brown mb-2">復小健</h4>
-                        <p class="text-camp-brown/80 mb-1">物治系 三年級</p>
-                        <p class="text-sm text-camp-brown/60">"復健治療達人"</p>
-                    </div>
-
-                    <div class="team-card bg-white/80 backdrop-blur-sm rounded-3xl p-6 text-center shadow-lg">
-                        <div class="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-2xl">⚡</span>
-                        </div>
-                        <h4 class="text-lg font-bold text-camp-brown mb-2">電小療</h4>
-                        <p class="text-camp-brown/80 mb-1">物治系 二年級</p>
-                        <p class="text-sm text-camp-brown/60">"電療技術專家"</p>
+                    <h3 class="text-xl font-bold text-camp-brown mb-3 group-hover:text-camp-brown/80 transition-colors">蔡仁瑋</h3>
+                    <div class="inline-block px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 rounded-full">
+                        <p class="text-camp-brown/80 text-sm font-medium">活動組組長</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 主辦單位 -->
-    <section class="py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-camp-brown mb-4">主辦單位</h2>
-                <p class="text-camp-brown/70">支持與協助本次活動的單位</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 text-center shadow-lg">
-                    <div class="w-20 h-20 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <span class="text-3xl">🏫</span>
+                <div class="team-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl text-center transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/50">
+                    <div class="relative w-64 h-64 mx-auto rounded-2xl overflow-hidden shadow-lg mb-6 ring-4 ring-white group-hover:ring-camp-pink/20 transition-all duration-300">
+                        <img src="assets/img/people/activity3.jpg" alt="活動組組長" class="w-full h-full object-cover">
                     </div>
-                    <h3 class="text-xl font-bold text-camp-brown mb-3">資訊管理學系</h3>
-                    <p class="text-camp-brown/70 text-sm leading-relaxed">
-                        培養兼具資訊技術與管理能力的人才，連結科技與商業的橋樑。
-                    </p>
+                    <h3 class="text-xl font-bold text-camp-brown mb-3 group-hover:text-camp-brown/80 transition-colors">黃禾雅</h3>
+                    <div class="inline-block px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 rounded-full">
+                        <p class="text-camp-brown/80 text-sm font-medium">活動長</p>
+                    </div>
                 </div>
 
-                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 text-center shadow-lg">
-                    <div class="w-20 h-20 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <span class="text-3xl">🧠</span>
+                <div class="team-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl text-center transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/50">
+                    <div class="relative w-64 h-64 mx-auto rounded-2xl overflow-hidden shadow-lg mb-6 ring-4 ring-white group-hover:ring-camp-pink/20 transition-all duration-300">
+                        <img src="assets/img/people/hello.jpg" alt="公關長" class="w-full h-full object-cover">
                     </div>
-                    <h3 class="text-xl font-bold text-camp-brown mb-3">心理學系</h3>
-                    <p class="text-camp-brown/70 text-sm leading-relaxed">
-                        探索人類心理與行為的奧秘，培養理解與關懷他人的能力。
-                    </p>
+                    <h3 class="text-xl font-bold text-camp-brown mb-3 group-hover:text-camp-brown/80 transition-colors">蔡冠毅</h3>
+                    <div class="inline-block px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 rounded-full">
+                        <p class="text-camp-brown/80 text-sm font-medium">公關長</p>
+                    </div>
                 </div>
 
-                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 text-center shadow-lg">
-                    <div class="w-20 h-20 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <span class="text-3xl">🏥</span>
+                <div class="team-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl text-center transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/50">
+                    <div class="relative w-64 h-64 mx-auto rounded-2xl overflow-hidden shadow-lg mb-6 ring-4 ring-white group-hover:ring-camp-pink/20 transition-all duration-300">
+                        <img src="assets/img/people/money.jpg" alt="總務長" class="w-full h-full object-cover">
                     </div>
-                    <h3 class="text-xl font-bold text-camp-brown mb-3">物理治療學系</h3>
-                    <p class="text-camp-brown/70 text-sm leading-relaxed">
-                        運用物理因子協助患者恢復功能，守護人們的身體健康。
-                    </p>
+                    <h3 class="text-xl font-bold text-camp-brown mb-3 group-hover:text-camp-brown/80 transition-colors">黃瀅心</h3>
+                    <div class="inline-block px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 rounded-full">
+                        <p class="text-camp-brown/80 text-sm font-medium">總務長</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- 聯合宣言 -->
-            <div class="mt-16 bg-gradient-to-r from-camp-pink to-camp-orange rounded-3xl p-8 text-white text-center">
-                <h3 class="text-2xl font-bold mb-4">🤝 三系聯合宣言</h3>
-                <p class="text-lg leading-relaxed mb-6">
-                    我們相信，不同領域的結合能創造出更大的價值。透過這次迎新宿營，我們希望促進資管、心理、物治三系間的交流與合作，讓每位新生都能在多元的環境中成長，發現更廣闊的可能性。
-                </p>
-                <div class="flex justify-center space-x-8 text-4xl">
-                    <span title="資管系">💻</span>
-                    <span>×</span>
-                    <span title="心理系">🧠</span>
-                    <span>×</span>
-                    <span title="物治系">🏥</span>
-                    <span>=</span>
-                    <span title="無限可能">♾️</span>
+                <div class="team-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl text-center transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/50">
+                    <div class="relative w-64 h-64 mx-auto rounded-2xl overflow-hidden shadow-lg mb-6 ring-4 ring-white group-hover:ring-camp-pink/20 transition-all duration-300">
+                        <img src="assets/img/people/place.jpg" alt="場器長" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-camp-brown mb-3 group-hover:text-camp-brown/80 transition-colors">方婷</h3>
+                    <div class="inline-block px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 rounded-full">
+                        <p class="text-camp-brown/80 text-sm font-medium">場器長</p>
+                    </div>
+                </div>
+
+                <div class="team-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl text-center transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/50">
+                    <div class="relative w-64 h-64 mx-auto rounded-2xl overflow-hidden shadow-lg mb-6 ring-4 ring-white group-hover:ring-camp-pink/20 transition-all duration-300">
+                        <img src="assets/img/people/art.jpg" alt="美宣組組長" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-camp-brown mb-3 group-hover:text-camp-brown/80 transition-colors">郭子萱</h3>
+                    <div class="inline-block px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 rounded-full">
+                        <p class="text-camp-brown/80 text-sm font-medium">美宣組組長</p>
+                    </div>
+                </div>
+
+                <div class="team-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl text-center transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/50">
+                    <div class="relative w-64 h-64 mx-auto rounded-2xl overflow-hidden shadow-lg mb-6 ring-4 ring-white group-hover:ring-camp-pink/20 transition-all duration-300">
+                        <img src="assets/img/people/team1.jpg" alt="隊輔長" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-camp-brown mb-3 group-hover:text-camp-brown/80 transition-colors">楊珮榆</h3>
+                    <div class="inline-block px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 rounded-full">
+                        <p class="text-camp-brown/80 text-sm font-medium">隊輔長</p>
+                    </div>
+                </div>
+
+                <div class="team-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl text-center transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/50">
+                    <div class="relative w-64 h-64 mx-auto rounded-2xl overflow-hidden shadow-lg mb-6 ring-4 ring-white group-hover:ring-camp-pink/20 transition-all duration-300">
+                        <img src="assets/img/people/team2.jpg" alt="隊輔長" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-camp-brown mb-3 group-hover:text-camp-brown/80 transition-colors">廖千容</h3>
+                    <div class="inline-block px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 rounded-full">
+                        <p class="text-camp-brown/80 text-sm font-medium">隊輔長</p>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -379,7 +486,7 @@
                     <h3 class="text-xl font-bold mb-4">聯絡資訊</h3>
                     <p class="mb-2">國立台灣大學</p>
                     <p class="mb-2">資訊管理學系、心理學系、物理治療學系</p>
-                    <p>Email: camp2025@ntu.edu.tw</p>
+                    <p>Email: ntupipcamp2025@gmail.com</p>
                 </div>
                 <div>
                     <h3 class="text-xl font-bold mb-4">活動資訊</h3>
@@ -405,5 +512,16 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+                mobileMenu.style.display = 'block';
+            } else {
+                mobileMenu.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html> 

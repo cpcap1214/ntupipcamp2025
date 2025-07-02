@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>愛你的心物法資拔｜2025迎新宿營</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="author" content="愛你的心物法資拔團隊">
+    <meta name="description" content="Aug. 24 ~ Aug. 26 | Join us!">
+    <meta name="keywords" content="愛你的心物法資拔, 2025 愛你的心物法資拔, ntupipcamp, event, 臺大, 宿營, 台大, 臺大心理 x 臺大資管 x 臺大物治聯合宿營, NTU, IM, PT, PSY, 國立台灣大學, 國立臺灣大學, 資管, 心理, 物治, 聯合宿營, 迎新宿營, 迎新, 台大資管迎新, 台大資管宿營, 台大心理宿營, 台大資管心理迎新, 台大物治宿營, 台大物治迎新, 資訊管理學系迎新, 資訊管理學系宿營, 心理學系宿營, 心理學系迎新, 物理治療學系宿營, 物理治療學系迎新">
+    <meta name="google-site-verification" content="b9imDOrFawXaBXCC4r3uJDdswSYcalD-wWpMYhFq-no" />
+    <link rel="canonical" href="">
+    
+    <!-- Social: Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="2025 愛你的心物法資拔 - 心理 X 資管 X 物治 三系聯合宿營">
+    <meta name="twitter:description" content="Aug. 24 ~ Aug. 26 | Join us!">
+    <meta name="twitter:image:src" content="https://ntu.im/ntupipcamp2025/assets/background.png">
+    
+    <!-- Social: Facebook / Open Graph -->
+    <meta property="og:title" content="2025 愛你的心物法資拔 - 心理 X 資管 X 物治 三系聯合宿營" />
+    <meta property="og:site_name" content="2025 愛你的心物法資拔 - 心理 X 資管 X 物治 三系聯合宿營" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="https://ntu.im/ntupipcamp2025/assets/background.png" />
+    <meta property="og:description" content="Aug. 24 ~ Aug. 26 | Join us!" />
+    
+    <title>2025 愛你的心物法資拔 - 心理 X 資管 X 物治 三系聯合宿營</title>
+    <link rel="shortcut icon" href="./assets/background.png">
+    <link rel="apple-touch-icon" href="./assets/background.png">
+    <meta name="theme-color" content="#6dd0cd">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -17,26 +48,77 @@
                         'camp-brown': '#8B4513'
                     },
                     fontFamily: {
-                        'chinese': ['Noto Sans TC', 'sans-serif']
+                        'chinese': ['Noto Sans TC', 'sans-serif'],
+                        'serif-tc': ['Noto Serif TC', 'serif']
                     }
                 }
             }
         }
     </script>
+    
     <style>
-        .hero-bg {
-            background: linear-gradient(135deg, #FFD4C4 0%, #FFB6C1 50%, #FFF2CC 100%);
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            overflow-x: hidden;
         }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(255, 212, 196, 0.2) 0%, rgba(255, 182, 193, 0.2) 50%, rgba(255, 242, 204, 0.2) 100%), url('assets/background.png');
+            background-size: cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            min-height: calc(300vh - 1000px);
+            position: relative;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.05) 100%);
+            z-index: 1;
+        }
+        
+        .hero-bg > * {
+            position: relative;
+            z-index: 2;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-attachment: scroll;
+                min-height: 100vh;
+            }
+        }
+        
+        .section-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .overlay {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
         .card-hover {
             transition: all 0.3s ease;
         }
+        
         .card-hover:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
+        
         .fade-in {
             animation: fadeInUp 0.8s ease-out forwards;
         }
+        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -47,205 +129,410 @@
                 transform: translateY(0);
             }
         }
+        
+        .menu-trigger {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-trigger {
+                display: block;
+            }
+            .desktop-menu {
+                display: none;
+            }
+        }
+        
+        .mobile-menu {
+            display: none;
+        }
+        
+        .mobile-menu.show {
+            display: block;
+        }
+        
+        .countdown-container {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .countdown-item {
+            background: linear-gradient(135deg, #FFB6C1, #FFD4C4);
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            min-width: 120px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .countdown-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+        
+        .countdown-item:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .countdown-item:hover::before {
+            left: 100%;
+        }
+        
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .countdown-label {
+            font-size: 1rem;
+            color: white;
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+            margin-top: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .countdown-container {
+                gap: 1rem;
+            }
+            .countdown-item {
+                min-width: 80px;
+                padding: 1.5rem 1rem;
+            }
+            .countdown-number {
+                font-size: 2rem;
+            }
+        }
     </style>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
-<body class="font-chinese bg-white min-h-screen">
-    <!-- 導覽列 -->
-    <nav class="bg-white/90 backdrop-blur-sm shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <h1 class="text-xl font-bold text-camp-brown">愛你的心物法資拔</h1>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-camp-brown font-medium hover:text-camp-pink transition-colors">首頁</a>
-                    <a href="news.html" class="text-camp-brown hover:text-camp-pink transition-colors">最新消息</a>
-                    <a href="schedule.html" class="text-camp-brown hover:text-camp-pink transition-colors">活動時程</a>
-                    <a href="team.html" class="text-camp-brown hover:text-camp-pink transition-colors">團隊介紹</a>
-                    <a href="downloads.html" class="text-camp-brown hover:text-camp-pink transition-colors">下載區</a>
-                    <a href="faq.html" class="text-camp-brown hover:text-camp-pink transition-colors">FAQ</a>
-                </div>
-                <!-- 手機選單按鈕 -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-camp-brown hover:text-camp-pink">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- 手機選單 -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-sm">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" class="block px-3 py-2 text-camp-brown font-medium">首頁</a>
-                <a href="news.html" class="block px-3 py-2 text-camp-brown">最新消息</a>
-                <a href="schedule.html" class="block px-3 py-2 text-camp-brown">活動時程</a>
-                <a href="team.html" class="block px-3 py-2 text-camp-brown">團隊介紹</a>
-                <a href="downloads.html" class="block px-3 py-2 text-camp-brown">下載區</a>
-                <a href="faq.html" class="block px-3 py-2 text-camp-brown">FAQ</a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- 主視覺區域 -->
-    <section class="hero-bg relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="text-center fade-in">
-                <div class="mb-8">
-                    <img src="assets/background.png" alt="2025愛你的心物法資拔迎新宿營" class="mx-auto max-w-full h-auto rounded-3xl shadow-2xl">
-                </div>
-                <h1 class="text-4xl md:text-6xl font-bold text-camp-brown mb-6">
-                    愛你的心物法資拔
-                </h1>
-                <p class="text-xl md:text-2xl text-camp-brown mb-4">
-                    2025 迎新宿營
-                </p>
-                <p class="text-lg text-camp-brown/80 mb-8">
-                    PSY × IM × PT<br>
-                    三系聯合迎新營
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <div class="bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
-                        <span class="text-camp-brown font-medium">📅 2025.08.24 - 08.26</span>
+<body class="font-chinese bg-white">
+    <div id="st-container" class="st-container">
+        <div class="st-pusher">
+            <div class="st-content">
+                <!-- Hero Section -->
+                <section id="top-section-hero" class="hero-bg relative">
+                    <!-- Header -->
+                    <header id="top-header" class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-sm shadow-lg">
+                        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <div class="flex justify-between items-center h-16">
+                                <div class="flex items-center">
+                                    <a href="index.html">
+                                        <img src="assets/mainpage.png" alt="愛你的心物法資拔" class="h-12 w-auto hover:opacity-80 transition-opacity">
+                                    </a>
+                                </div>
+                                
+                                <!-- Desktop Navigation -->
+                                <nav class="desktop-menu hidden md:flex items-center space-x-8">
+                                    <a href="#top-section-hero" class="text-camp-brown font-medium hover:text-camp-pink transition-colors">首頁</a>
+                                    <a href="news.html" class="text-camp-brown hover:text-camp-pink transition-colors">最新消息</a>
+                                    <a href="schedule.html" class="text-camp-brown hover:text-camp-pink transition-colors">活動時程</a>
+                                    <a href="team.html" class="text-camp-brown hover:text-camp-pink transition-colors">團隊介紹</a>
+                                    <a href="downloads.html" class="text-camp-brown hover:text-camp-pink transition-colors">下載區</a>
+                                    <a href="faq.html" class="text-camp-brown hover:text-camp-pink transition-colors">FAQ</a>
+                                    <a href="https://forms.gle/QyXHTfoXtp8fRMq16" target="_blank" class="bg-gradient-to-r from-camp-pink to-camp-orange text-white px-4 py-2 rounded-full hover:opacity-80 transition-opacity inline-block">
+                                        點我報名
+                                    </a>
+                                </nav>
+                                
+                                <!-- Mobile Menu Button -->
+                                <div class="md:hidden">
+                                    <button id="mobile-menu-button" class="text-camp-brown hover:text-camp-pink">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Mobile Menu -->
+                        <div id="mobile-menu" class="mobile-menu md:hidden bg-white/95 backdrop-blur-sm">
+                            <div class="px-2 pt-2 pb-3 space-y-1">
+                                <a href="#top-section-hero" class="block px-3 py-2 text-camp-brown font-medium">首頁</a>
+                                <a href="news.html" class="block px-3 py-2 text-camp-brown">最新消息</a>
+                                <a href="schedule.html" class="block px-3 py-2 text-camp-brown">活動時程</a>
+                                <a href="team.html" class="block px-3 py-2 text-camp-brown">團隊介紹</a>
+                                <a href="downloads.html" class="block px-3 py-2 text-camp-brown">下載區</a>
+                                <a href="faq.html" class="block px-3 py-2 text-camp-brown">FAQ</a>
+                                <a href="https://forms.gle/QyXHTfoXtp8fRMq16" target="_blank" class="block w-full text-left px-3 py-2 text-camp-brown">點我報名</a>
+                            </div>
+                        </div>
+                    </header>
+                    
+                    <!-- Hero Content -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center text-white px-4">
+                            <div class="fade-in">
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
-                        <span class="text-camp-brown font-medium">📍 合歡自然生活體驗基地</span>
+                    <!-- Scroll Down Arrow -->
+                    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+                        <a href="#about" class="text-white animate-bounce">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                            </svg>
+                        </a>
                     </div>
-                </div>
+                </section>
+                
+                <!-- Countdown Section -->
+                <section class="py-20 bg-gradient-to-b from-camp-yellow/30 to-white">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <h2 class="text-3xl md:text-4xl font-bold text-camp-brown mb-12">活動倒數計時</h2>
+                        
+                        <!-- Countdown Timer -->
+                        <div class="countdown-container">
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="days">-</div>
+                                <div class="countdown-label">日</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="hours">-</div>
+                                <div class="countdown-label">時</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="minutes">-</div>
+                                <div class="countdown-label">分</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="seconds">-</div>
+                                <div class="countdown-label">秒</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- About Section -->
+                <section id="about" class="section-bg relative py-20" style="margin: 60px 5% 0; width: 90%; border-radius: 50px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/background.png');">
+                    <div class="overlay absolute inset-0 rounded-[50px]"></div>
+                    <div class="relative z-10 max-w-6xl mx-auto px-4 text-center text-white">
+                        <h3 class="text-3xl font-bold mb-12">參與科系</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div class="fade-in">
+                                <h5 class="text-xl font-medium mb-4">物理治療學系</h5>
+                                <div class="w-32 h-32 mx-auto bg-white rounded-full mb-4 flex items-center justify-center text-camp-brown text-6xl">
+                                    PT
+                                </div>
+                            </div>
+                            <div class="fade-in" style="animation-delay: 0.2s;">
+                                <h5 class="text-xl font-medium mb-4">資訊管理學系</h5>
+                                <div class="w-32 h-32 mx-auto bg-white rounded-full mb-4 flex items-center justify-center text-camp-brown text-6xl">
+                                    IM
+                                </div>
+                            </div>
+                            <div class="fade-in" style="animation-delay: 0.4s;">
+                                <h5 class="text-xl font-medium mb-4">心理學系</h5>
+                                <div class="w-32 h-32 mx-auto bg-white rounded-full mb-4 flex items-center justify-center text-camp-brown text-6xl">
+                                    PSY
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Team Section -->
+                <section id="team" class="section-bg relative py-20" style="margin: 60px 5% 0; width: 90%; border-radius: 50px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/background.png');">
+                    <div class="overlay absolute inset-0 rounded-[50px]"></div>
+                    <div class="relative z-10 max-w-6xl mx-auto px-4 text-center text-white">
+                        <h3 class="text-3xl font-bold mb-8">團隊介紹</h3>
+                        <a href="team.html" class="inline-block bg-white text-camp-brown px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
+                            點我看團隊介紹
+                        </a>
+                    </div>
+                </section>
+                
+                <!-- Venue Section -->
+                <section id="venue" class="section-bg relative py-20" style="margin: 60px 5% 0; width: 90%; border-radius: 50px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/background.png');">
+                    <div class="overlay absolute inset-0 rounded-[50px]"></div>
+                    <div class="relative z-10 max-w-6xl mx-auto px-4 text-white">
+                        <h3 class="text-3xl font-bold text-center mb-12">活動地點</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="space-y-4">
+                                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6">
+                                    <h5 class="text-xl font-medium mb-2">合歡自然生活體驗基地</h5>
+                                    <p class="mb-2">地址：新北市坪林區水德里苦苓腳3之3號</p>
+                                    <p>電話：02 26656424</p>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="aspect-square bg-white/20 backdrop-blur-sm rounded-lg"></div>
+                                <div class="aspect-square bg-white/20 backdrop-blur-sm rounded-lg"></div>
+                                <div class="aspect-square bg-white/20 backdrop-blur-sm rounded-lg"></div>
+                                <div class="aspect-square bg-white/20 backdrop-blur-sm rounded-lg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Registration Section -->
+                <section id="registration" class="section-bg relative py-20" style="margin: 60px 5% 0; width: 90%; border-radius: 50px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/background.png');">
+                    <div class="overlay absolute inset-0 rounded-[50px]"></div>
+                    <div class="relative z-10 max-w-6xl mx-auto px-4 text-white">
+                        <h3 class="text-3xl font-bold text-center mb-12">報名資訊</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="bg-white rounded-lg p-8 text-camp-brown">
+                                <div class="text-center mb-6">
+                                    <h4 class="text-2xl font-bold mb-2">報名連結</h4>
+                                    <div class="text-3xl font-bold">
+                                        <span class="text-lg">早鳥</span> NT$ 4,500
+                                    </div>
+                                    <div class="text-3xl font-bold">
+                                        <span class="text-lg">一般</span> NT$ 4,800
+                                    </div>
+                                </div>
+                                <ul class="space-y-2 mb-6 text-sm">
+                                    <li>早鳥優惠至 8/7 23:59截止</li>
+                                    <li>一般報名至 8/19 11:59截止</li>
+                                </ul>
+                                <a href="https://forms.gle/QyXHTfoXtp8fRMq16" target="_blank" class="w-full bg-camp-pink text-white py-3 rounded-lg font-medium hover:opacity-80 transition-opacity text-center block">
+                                    點我報名
+                                </a>
+                            </div>
+                            <div class="bg-white/20 backdrop-blur-sm rounded-lg p-8">
+                                <h4 class="text-2xl font-bold text-center mb-6">報名須知</h4>
+                                <ul class="space-y-4 text-sm">
+                                    <li>報名資格：台大心理、資管、物治系大一新生</li>
+                                    <li>活動日期：8/24～26</li>
+                                    <li>活動地點：合歡自然生活體驗基地</li>
+                                    <li>請注意報名期限及繳費期限，逾時不候！</li>
+                                    <li>宿營規劃及其他資訊可參考宿營網頁，也歡迎直接聯絡我們！</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Footer -->
+                <footer class="bg-camp-brown text-white py-12" style="margin-top: 60px;">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div>
+                                <h3 class="text-xl font-bold mb-4">聯絡資訊</h3>
+                                <p class="mb-2">國立台灣大學</p>
+                                <p class="mb-2">資訊管理學系、心理學系、物理治療學系</p>
+                                <p>Email: ntupipcamp2025@gmail.com</p>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-4">活動資訊</h3>
+                                <p class="mb-2">時間：2025.08.24 - 08.26</p>
+                                <p class="mb-2">地點：合歡自然生活體驗基地</p>
+                                <p>對象：台大資管、心理、物治三系新生</p>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-4">快速連結</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="news.html" class="hover:text-camp-pink transition-colors">最新消息</a></li>
+                                    <li><a href="schedule.html" class="hover:text-camp-pink transition-colors">活動時程</a></li>
+                                    <li><a href="downloads.html" class="hover:text-camp-pink transition-colors">下載區</a></li>
+                                    <li><a href="faq.html" class="hover:text-camp-pink transition-colors">FAQ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="border-t border-white/20 mt-8 pt-8 text-center">
+                            <p>&copy; 2025 愛你的心物法資拔迎新宿營. All rights reserved.</p>
+                            <p class="mt-2 text-sm opacity-80">最後更新時間：2025/07/02</p>
+                        </div>
+                    </div>
+                </footer>
             </div>
         </div>
-        <!-- 裝飾元素 -->
-        <div class="absolute top-10 left-10 text-6xl opacity-20">💕</div>
-        <div class="absolute bottom-10 right-10 text-6xl opacity-20">🌸</div>
-        <div class="absolute top-1/2 left-5 text-4xl opacity-20">✨</div>
-    </section>
-
-    <!-- 快速導覽區塊 -->
-    <section class="py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-camp-brown mb-12">快速導覽</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 最新消息卡片 -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg card-hover">
-                    <div class="text-4xl mb-4">📢</div>
-                    <h3 class="text-xl font-bold text-camp-brown mb-3">最新消息</h3>
-                    <p class="text-camp-brown/70 mb-4">掌握活動最新資訊與重要公告</p>
-                    <a href="news.html" class="inline-block bg-camp-pink text-white px-4 py-2 rounded-full hover:bg-camp-pink/80 transition-colors">
-                        查看更多
-                    </a>
-                </div>
-
-                <!-- 活動時程卡片 -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg card-hover">
-                    <div class="text-4xl mb-4">⏰</div>
-                    <h3 class="text-xl font-bold text-camp-brown mb-3">活動時程</h3>
-                    <p class="text-camp-brown/70 mb-4">三天兩夜精彩行程安排</p>
-                    <a href="schedule.html" class="inline-block bg-camp-pink text-white px-4 py-2 rounded-full hover:bg-camp-pink/80 transition-colors">
-                        查看時程
-                    </a>
-                </div>
-
-                <!-- 團隊介紹卡片 -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg card-hover">
-                    <div class="text-4xl mb-4">👥</div>
-                    <h3 class="text-xl font-bold text-camp-brown mb-3">團隊介紹</h3>
-                    <p class="text-camp-brown/70 mb-4">認識我們的工作團隊與隊輔</p>
-                    <a href="team.html" class="inline-block bg-camp-pink text-white px-4 py-2 rounded-full hover:bg-camp-pink/80 transition-colors">
-                        認識團隊
-                    </a>
-                </div>
-
-                <!-- 下載區卡片 -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg card-hover">
-                    <div class="text-4xl mb-4">📁</div>
-                    <h3 class="text-xl font-bold text-camp-brown mb-3">下載區</h3>
-                    <p class="text-camp-brown/70 mb-4">活動簡章、同意書等重要文件</p>
-                    <a href="downloads.html" class="inline-block bg-camp-pink text-white px-4 py-2 rounded-full hover:bg-camp-pink/80 transition-colors">
-                        下載文件
-                    </a>
-                </div>
-
-                <!-- FAQ卡片 -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg card-hover">
-                    <div class="text-4xl mb-4">❓</div>
-                    <h3 class="text-xl font-bold text-camp-brown mb-3">常見問題</h3>
-                    <p class="text-camp-brown/70 mb-4">解答您關於活動的各種疑問</p>
-                    <a href="faq.html" class="inline-block bg-camp-pink text-white px-4 py-2 rounded-full hover:bg-camp-pink/80 transition-colors">
-                        查看FAQ
-                    </a>
-                </div>
-
-                <!-- 報名資訊卡片 -->
-                <div class="bg-gradient-to-br from-camp-pink to-camp-orange rounded-3xl p-6 shadow-lg card-hover text-white">
-                    <div class="text-4xl mb-4">🎯</div>
-                    <h3 class="text-xl font-bold mb-3">立即報名</h3>
-                    <p class="mb-4 opacity-90">開放報名中！名額有限，把握機會</p>
-                    <button class="w-full bg-white text-camp-pink px-4 py-2 rounded-full font-bold hover:bg-gray-100 transition-colors">
-                        前往報名
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 活動特色 -->
-    <section class="py-16 bg-white/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-camp-brown mb-12">活動特色</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="text-6xl mb-4">🤝</div>
-                    <h3 class="text-xl font-bold text-camp-brown mb-3">三系聯合</h3>
-                    <p class="text-camp-brown/70">心理系、資管系、物治系攜手合作，跨領域交流學習</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-6xl mb-4">🏔️</div>
-                    <h3 class="text-xl font-bold text-camp-brown mb-3">自然環境</h3>
-                    <p class="text-camp-brown/70">合歡自然生活體驗基地，遠離都市喧囂，享受大自然</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-6xl mb-4">🎉</div>
-                    <h3 class="text-xl font-bold text-camp-brown mb-3">精彩活動</h3>
-                    <p class="text-camp-brown/70">豐富多元的團康活動，讓你快速融入大學生活</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 頁尾 -->
-    <footer class="bg-camp-brown text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">聯絡資訊</h3>
-                    <p class="mb-2">國立台灣大學</p>
-                    <p class="mb-2">資訊管理學系、心理學系、物理治療學系</p>
-                    <p>Email: camp2025@ntu.edu.tw</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">活動資訊</h3>
-                    <p class="mb-2">時間：2025.08.24 - 08.26</p>
-                    <p class="mb-2">地點：合歡自然生活體驗基地</p>
-                    <p>對象：台大資管、心理、物治三系新生</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">快速連結</h3>
-                    <ul class="space-y-2">
-                        <li><a href="news.html" class="hover:text-camp-pink transition-colors">最新消息</a></li>
-                        <li><a href="schedule.html" class="hover:text-camp-pink transition-colors">活動時程</a></li>
-                        <li><a href="downloads.html" class="hover:text-camp-pink transition-colors">下載區</a></li>
-                        <li><a href="faq.html" class="hover:text-camp-pink transition-colors">FAQ</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-white/20 mt-8 pt-8 text-center">
-                <p>&copy; 2025 愛你的心物法資拔迎新宿營. All rights reserved.</p>
-                <p class="mt-2 text-sm opacity-80">最後更新時間：2025/06/20</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
+    </div>
+    
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('show');
+        });
+        
+        // Countdown timer
+        function updateCountdown() {
+            const targetDate = new Date('2025-08-24T00:00:00');
+            const now = new Date();
+            const difference = targetDate.getTime() - now.getTime();
+            
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+                document.getElementById('seconds').textContent = seconds;
+            } else {
+                document.getElementById('days').textContent = '0';
+                document.getElementById('hours').textContent = '0';
+                document.getElementById('minutes').textContent = '0';
+                document.getElementById('seconds').textContent = '0';
+            }
+        }
+        
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease-out';
+            observer.observe(el);
+        });
+    </script>
 </body>
-</html> 
+</html>

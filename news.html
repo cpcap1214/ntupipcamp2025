@@ -23,34 +23,33 @@
             }
         }
     </script>
-    <style>
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-    </style>
 </head>
 <body class="font-chinese bg-white min-h-screen">
-    <!-- 導覽列 -->
-    <nav class="bg-white/90 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-sm shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
+            <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <h1 class="text-xl font-bold text-camp-brown">愛你的心物法資拔</h1>
+                    <a href="index.html">
+                        <img src="assets/mainpage.png" alt="愛你的心物法資拔" class="h-12 w-auto hover:opacity-80 transition-opacity">
+                    </a>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
+                
+                <!-- Desktop Navigation -->
+                <nav class="desktop-menu hidden md:flex items-center space-x-8">
                     <a href="index.html" class="text-camp-brown hover:text-camp-pink transition-colors">首頁</a>
                     <a href="news.html" class="text-camp-brown font-medium hover:text-camp-pink transition-colors">最新消息</a>
                     <a href="schedule.html" class="text-camp-brown hover:text-camp-pink transition-colors">活動時程</a>
                     <a href="team.html" class="text-camp-brown hover:text-camp-pink transition-colors">團隊介紹</a>
                     <a href="downloads.html" class="text-camp-brown hover:text-camp-pink transition-colors">下載區</a>
                     <a href="faq.html" class="text-camp-brown hover:text-camp-pink transition-colors">FAQ</a>
-                </div>
-                <!-- 手機選單按鈕 -->
-                <div class="md:hidden flex items-center">
+                    <a href="https://forms.gle/QyXHTfoXtp8fRMq16" target="_blank" class="bg-gradient-to-r from-camp-pink to-camp-orange text-white px-4 py-2 rounded-full hover:opacity-80 transition-opacity inline-block">
+                        點我報名
+                    </a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-camp-brown hover:text-camp-pink">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -59,8 +58,9 @@
                 </div>
             </div>
         </div>
-        <!-- 手機選單 -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-sm">
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white/95 backdrop-blur-sm" style="display: none;">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="index.html" class="block px-3 py-2 text-camp-brown">首頁</a>
                 <a href="news.html" class="block px-3 py-2 text-camp-brown font-medium">最新消息</a>
@@ -68,225 +68,32 @@
                 <a href="team.html" class="block px-3 py-2 text-camp-brown">團隊介紹</a>
                 <a href="downloads.html" class="block px-3 py-2 text-camp-brown">下載區</a>
                 <a href="faq.html" class="block px-3 py-2 text-camp-brown">FAQ</a>
+                <a href="https://forms.gle/QyXHTfoXtp8fRMq16" target="_blank" class="block w-full text-left px-3 py-2 text-camp-brown">點我報名</a>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- 頁面標題 -->
-    <section class="py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-camp-brown mb-4">📢 最新消息</h1>
-            <p class="text-lg text-camp-brown/70">掌握活動最新資訊與重要公告</p>
-        </div>
-    </section>
-
-    <!-- 最新消息內容 -->
-    <section class="pb-16">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- 重要公告 -->
-            <div class="bg-gradient-to-r from-red-100 to-pink-100 border-l-4 border-red-400 rounded-lg p-6 mb-8">
-                <div class="flex items-center mb-3">
-                    <span class="text-2xl mr-3">🚨</span>
-                    <h2 class="text-xl font-bold text-red-800">重要公告</h2>
-                </div>
-                <p class="text-red-700 mb-2">報名即將截止！請把握最後機會</p>
-                <p class="text-sm text-red-600">發布時間：2025年6月20日</p>
-            </div>
-
-            <!-- 消息列表 -->
-            <div class="space-y-6">
-                <!-- 消息項目 1 -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg card-hover">
-                    <div class="flex items-start space-x-4">
-                        <div class="flex-shrink-0">
-                            <div class="w-12 h-12 bg-camp-pink/20 rounded-full flex items-center justify-center">
-                                <span class="text-2xl">📝</span>
-                            </div>
-                        </div>
-                        <div class="flex-grow">
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold text-camp-brown">報名資格確認通知</h3>
-                                <span class="text-sm text-camp-brown/60 bg-camp-yellow px-3 py-1 rounded-full">2025.06.18</span>
-                            </div>
-                            <p class="text-camp-brown/80 mb-3">
-                                各位同學好！報名系統已開放，請確認您符合以下報名資格：
-                            </p>
-                            <ul class="text-camp-brown/70 text-sm space-y-1 ml-4">
-                                <li>• 台大資管系、心理系、物治系112學年度入學新生</li>
-                                <li>• 完成繳費及上傳相關文件</li>
-                                <li>• 家長同意書已簽署</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 消息項目 2 -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg card-hover">
-                    <div class="flex items-start space-x-4">
-                        <div class="flex-shrink-0">
-                            <div class="w-12 h-12 bg-camp-orange/20 rounded-full flex items-center justify-center">
-                                <span class="text-2xl">🌤️</span>
-                            </div>
-                        </div>
-                        <div class="flex-grow">
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold text-camp-brown">天氣預報與備案公告</h3>
-                                <span class="text-sm text-camp-brown/60 bg-camp-yellow px-3 py-1 rounded-full">2025.06.15</span>
-                            </div>
-                            <p class="text-camp-brown/80 mb-3">
-                                根據氣象預報，活動期間天氣良好，但仍請同學們準備雨具以備不時之需。若遇颱風等極端天候，將啟動備案計畫。
-                            </p>
-                            <div class="bg-camp-yellow/50 rounded-lg p-3">
-                                <p class="text-sm text-camp-brown/80">
-                                    <strong>備案計畫：</strong>如遇惡劣天候將改為室內活動，詳細安排將另行通知。
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 消息項目 3 -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg card-hover">
-                    <div class="flex items-start space-x-4">
-                        <div class="flex-shrink-0">
-                            <div class="w-12 h-12 bg-camp-pink/20 rounded-full flex items-center justify-center">
-                                <span class="text-2xl">🎒</span>
-                            </div>
-                        </div>
-                        <div class="flex-grow">
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold text-camp-brown">行前準備清單更新</h3>
-                                <span class="text-sm text-camp-brown/60 bg-camp-yellow px-3 py-1 rounded-full">2025.06.12</span>
-                            </div>
-                            <p class="text-camp-brown/80 mb-3">
-                                行前準備清單已更新！請同學們檢查以下必備物品：
-                            </p>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="bg-white/50 rounded-lg p-3">
-                                    <h4 class="font-semibold text-camp-brown mb-2">必帶物品</h4>
-                                    <ul class="text-sm text-camp-brown/70 space-y-1">
-                                        <li>• 身分證件</li>
-                                        <li>• 健保卡</li>
-                                        <li>• 個人藥品</li>
-                                        <li>• 換洗衣物</li>
-                                    </ul>
-                                </div>
-                                <div class="bg-white/50 rounded-lg p-3">
-                                    <h4 class="font-semibold text-camp-brown mb-2">建議攜帶</h4>
-                                    <ul class="text-sm text-camp-brown/70 space-y-1">
-                                        <li>• 防曬用品</li>
-                                        <li>• 雨具</li>
-                                        <li>• 相機</li>
-                                        <li>• 零食</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 消息項目 4 -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg card-hover">
-                    <div class="flex items-start space-x-4">
-                        <div class="flex-shrink-0">
-                            <div class="w-12 h-12 bg-camp-orange/20 rounded-full flex items-center justify-center">
-                                <span class="text-2xl">🚗</span>
-                            </div>
-                        </div>
-                        <div class="flex-grow">
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold text-camp-brown">交通資訊補充說明</h3>
-                                <span class="text-sm text-camp-brown/60 bg-camp-yellow px-3 py-1 rounded-full">2025.06.10</span>
-                            </div>
-                            <p class="text-camp-brown/80 mb-3">
-                                關於前往合歡自然生活體驗基地的交通安排：
-                            </p>
-                            <div class="space-y-3">
-                                <div class="bg-green-50 border-l-4 border-green-400 p-3 rounded">
-                                    <p class="text-green-800 font-semibold">統一接駁車</p>
-                                    <p class="text-green-700 text-sm">集合時間：8月24日上午8:00</p>
-                                    <p class="text-green-700 text-sm">集合地點：台大校門口</p>
-                                </div>
-                                <div class="bg-blue-50 border-l-4 border-blue-400 p-3 rounded">
-                                    <p class="text-blue-800 font-semibold">自行前往</p>
-                                    <p class="text-blue-700 text-sm">請於當日上午10:00前抵達基地</p>
-                                    <p class="text-blue-700 text-sm">詳細路線圖請見下載區</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 消息項目 5 -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg card-hover">
-                    <div class="flex items-start space-x-4">
-                        <div class="flex-shrink-0">
-                            <div class="w-12 h-12 bg-camp-pink/20 rounded-full flex items-center justify-center">
-                                <span class="text-2xl">🎉</span>
-                            </div>
-                        </div>
-                        <div class="flex-grow">
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold text-camp-brown">活動網站正式上線</h3>
-                                <span class="text-sm text-camp-brown/60 bg-camp-yellow px-3 py-1 rounded-full">2025.06.08</span>
-                            </div>
-                            <p class="text-camp-brown/80 mb-3">
-                                「愛你的心物法資拔」迎新宿營官方網站正式上線！網站包含完整的活動資訊、時程安排、團隊介紹等內容。
-                            </p>
-                            <p class="text-camp-brown/70 text-sm">
-                                歡迎同學們多多瀏覽，如有任何問題請隨時聯繫我們！
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 訂閱通知 -->
-            <div class="mt-12 bg-gradient-to-r from-camp-pink to-camp-orange rounded-3xl p-8 text-white text-center">
-                <h2 class="text-2xl font-bold mb-4">📧 訂閱最新消息</h2>
-                <p class="mb-6 opacity-90">不想錯過任何重要資訊？加入我們的通知列表！</p>
-                <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                    <input type="email" placeholder="請輸入您的Email" class="flex-grow px-4 py-3 rounded-full text-camp-brown">
-                    <button class="bg-white text-camp-pink px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors">
-                        訂閱
-                    </button>
-                </div>
-            </div>
+    <!-- 施工中 -->
+    <section class="min-h-screen flex items-center justify-center pt-16">
+        <div class="text-center">
+            <div class="text-8xl mb-8">🚧</div>
+            <h1 class="text-6xl font-bold text-camp-brown mb-4">施工中</h1>
+            <a href="index.html" class="inline-block mt-8 bg-camp-brown text-white px-6 py-3 rounded-full hover:bg-camp-brown/80 transition-colors">
+                返回首頁
+            </a>
         </div>
     </section>
 
-    <!-- 頁尾 -->
-    <footer class="bg-camp-brown text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">聯絡資訊</h3>
-                    <p class="mb-2">國立台灣大學</p>
-                    <p class="mb-2">資訊管理學系、心理學系、物理治療學系</p>
-                    <p>Email: camp2025@ntu.edu.tw</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">活動資訊</h3>
-                    <p class="mb-2">時間：2025.08.24 - 08.26</p>
-                    <p class="mb-2">地點：合歡自然生活體驗基地</p>
-                    <p>對象：台大資管、心理、物治三系新生</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">快速連結</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="hover:text-camp-pink transition-colors">首頁</a></li>
-                        <li><a href="schedule.html" class="hover:text-camp-pink transition-colors">活動時程</a></li>
-                        <li><a href="downloads.html" class="hover:text-camp-pink transition-colors">下載區</a></li>
-                        <li><a href="faq.html" class="hover:text-camp-pink transition-colors">FAQ</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-white/20 mt-8 pt-8 text-center">
-                <p>&copy; 2025 愛你的心物法資拔迎新宿營. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+                mobileMenu.style.display = 'block';
+            } else {
+                mobileMenu.style.display = 'none';
+            }
+        });
+    </script>
 </body>
-</html> 
+</html>
