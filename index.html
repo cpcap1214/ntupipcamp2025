@@ -388,11 +388,59 @@
 </head>
 
 <body class="font-chinese bg-white">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-sm shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html">
+                        <img src="assets/mainpage.png" alt="愛你的心物法資拔" class="h-12 w-auto hover:opacity-80 transition-opacity">
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="desktop-menu hidden md:flex items-center space-x-8">
+                    <a href="#top-section-hero" class="text-camp-brown font-medium hover:text-camp-pink transition-colors">首頁</a>
+                    <a href="news.html" class="text-camp-brown hover:text-camp-pink transition-colors">最新消息</a>
+                    <a href="schedule.html" class="text-camp-brown hover:text-camp-pink transition-colors">活動時程</a>
+                    <a href="team.html" class="text-camp-brown hover:text-camp-pink transition-colors">團隊介紹</a>
+                    <a href="downloads.html" class="text-camp-brown hover:text-camp-pink transition-colors">下載區</a>
+                    <a href="faq.html" class="text-camp-brown hover:text-camp-pink transition-colors">FAQ</a>
+                    <a href="https://forms.gle/QyXHTfoXtp8fRMq16" target="_blank" class="bg-gradient-to-r from-camp-pink to-camp-orange text-white px-4 py-2 rounded-full hover:opacity-80 transition-opacity inline-block">
+                        點我報名
+                    </a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-camp-brown hover:text-camp-pink">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white/95 backdrop-blur-sm">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#top-section-hero" class="block px-3 py-2 text-camp-brown font-medium">首頁</a>
+                <a href="news.html" class="block px-3 py-2 text-camp-brown">最新消息</a>
+                <a href="schedule.html" class="block px-3 py-2 text-camp-brown">活動時程</a>
+                <a href="team.html" class="block px-3 py-2 text-camp-brown">團隊介紹</a>
+                <a href="downloads.html" class="block px-3 py-2 text-camp-brown">下載區</a>
+                <a href="faq.html" class="block px-3 py-2 text-camp-brown">FAQ</a>
+                <a href="https://forms.gle/QyXHTfoXtp8fRMq16" target="_blank" class="block w-full text-left px-3 py-2 text-camp-brown">點我報名</a>
+            </div>
+        </div>
+    </header>
+
     <div id="st-container" class="st-container">
         <div class="st-pusher">
             <div class="st-content">
                 <!-- Hero Section -->
-                <section id="top-section-hero" class="hero-bg relative">
+                <section id="top-section-hero" class="hero-bg relative pt-16">
                     <!-- Floating Background Elements -->
                     <div class="floating-elements">
                         <div class="floating-element"></div>
@@ -400,54 +448,6 @@
                         <div class="floating-element"></div>
                         <div class="floating-element"></div>
                     </div>
-                    
-                    <!-- Header -->
-                    <header id="top-header" class="fixed top-0 left-0 right-0 w-full z-[9999] bg-white/90 backdrop-blur-sm shadow-lg">
-                        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                            <div class="flex justify-between items-center h-16">
-                                <div class="flex items-center">
-                                    <a href="index.html">
-                                        <img src="assets/mainpage.png" alt="愛你的心物法資拔" class="h-12 w-auto hover:opacity-80 transition-opacity">
-                                    </a>
-                                </div>
-                                
-                                <!-- Desktop Navigation -->
-                                <nav class="desktop-menu hidden md:flex items-center space-x-8">
-                                    <a href="#top-section-hero" class="text-camp-brown font-medium hover:text-camp-pink transition-colors">首頁</a>
-                                    <a href="news.html" class="text-camp-brown hover:text-camp-pink transition-colors">最新消息</a>
-                                    <a href="schedule.html" class="text-camp-brown hover:text-camp-pink transition-colors">活動時程</a>
-                                    <a href="team.html" class="text-camp-brown hover:text-camp-pink transition-colors">團隊介紹</a>
-                                    <a href="downloads.html" class="text-camp-brown hover:text-camp-pink transition-colors">下載區</a>
-                                    <a href="faq.html" class="text-camp-brown hover:text-camp-pink transition-colors">FAQ</a>
-                                    <a href="https://forms.gle/QyXHTfoXtp8fRMq16" target="_blank" class="bg-gradient-to-r from-camp-pink to-camp-orange text-white px-4 py-2 rounded-full hover:opacity-80 transition-opacity inline-block">
-                                        點我報名
-                                    </a>
-                                </nav>
-                                
-                                <!-- Mobile Menu Button -->
-                                <div class="md:hidden">
-                                    <button id="mobile-menu-button" class="text-camp-brown hover:text-camp-pink">
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Mobile Menu -->
-                        <div id="mobile-menu" class="mobile-menu md:hidden bg-white/95 backdrop-blur-sm">
-                            <div class="px-2 pt-2 pb-3 space-y-1">
-                                <a href="#top-section-hero" class="block px-3 py-2 text-camp-brown font-medium">首頁</a>
-                                <a href="news.html" class="block px-3 py-2 text-camp-brown">最新消息</a>
-                                <a href="schedule.html" class="block px-3 py-2 text-camp-brown">活動時程</a>
-                                <a href="team.html" class="block px-3 py-2 text-camp-brown">團隊介紹</a>
-                                <a href="downloads.html" class="block px-3 py-2 text-camp-brown">下載區</a>
-                                <a href="faq.html" class="block px-3 py-2 text-camp-brown">FAQ</a>
-                                <a href="https://forms.gle/QyXHTfoXtp8fRMq16" target="_blank" class="block w-full text-left px-3 py-2 text-camp-brown">點我報名</a>
-                            </div>
-                        </div>
-                    </header>
                     
                     <!-- Hero Content -->
                     <div class="absolute inset-0 flex items-center justify-center">
@@ -702,6 +702,14 @@
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('show');
+        });
+        
+        // Close mobile menu when clicking links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.remove('show');
+            });
         });
         
         // Parallax effect
